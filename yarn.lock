@@ -6072,7 +6072,7 @@ __metadata:
   version: 0.2.4
   resolution: "async-eventemitter@npm:0.2.4"
   dependencies:
-    async: ^2.4.0
+    async: ^2.6.4
   checksum: b9e77e0f58ebd7188c50c23d613d1263e0ab501f5e677e02b57cc97d7032beaf60aafa189887e7105569c791e212df4af00b608be1e9a4c425911d577124911e
   languageName: node
   linkType: hard
@@ -6093,27 +6093,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:2.6.2":
-  version: 2.6.2
-  resolution: "async@npm:2.6.2"
-  dependencies:
-    lodash: ^4.17.11
-  checksum: e5e90a3bcc4d9bf964bfc6b77d63b8f5bee8c14e9a51c3317dbcace44d5b6b1fe01cd4fd347449704a107da7fcd25e1382ee8545957b2702782ae720605cf7a4
-  languageName: node
-  linkType: hard
-
-"async@npm:^1.4.2":
-  version: 1.5.2
-  resolution: "async@npm:1.5.2"
-  checksum: fe5d6214d8f15bd51eee5ae8ec5079b228b86d2d595f47b16369dec2e11b3ff75a567bb5f70d12d79006665fbbb7ee0a7ec0e388524eefd454ecbe651c124ebd
-  languageName: node
-  linkType: hard
-
-"async@npm:^2.0.1, async@npm:^2.1.2, async@npm:^2.4.0, async@npm:^2.5.0, async@npm:^2.6.1":
+"async@npm:2.6.4, async@npm:^1.4.2, async@npm:^2.1.2, async@npm:^2.6.4":
   version: 2.6.4
   resolution: "async@npm:2.6.4"
-  dependencies:
-    lodash: ^4.17.14
   checksum: a52083fb32e1ebe1d63e5c5624038bb30be68ff07a6c8d7dfe35e47c93fc144bd8652cbec869e0ac07d57dde387aa5f1386be3559cdee799cb1f789678d88e19
   languageName: node
   linkType: hard
@@ -10565,7 +10547,7 @@ __metadata:
   version: 1.6.0
   resolution: "eth-json-rpc-middleware@npm:1.6.0"
   dependencies:
-    async: ^2.5.0
+    async: ^2.6.4
     eth-query: ^2.1.2
     eth-tx-summary: ^3.1.2
     ethereumjs-block: ^1.6.0
@@ -10691,7 +10673,7 @@ __metadata:
   version: 3.2.4
   resolution: "eth-tx-summary@npm:3.2.4"
   dependencies:
-    async: ^2.1.2
+    async: ^2.6.4
     clone: ^2.0.0
     concat-stream: ^1.5.1
     end-of-stream: ^1.1.0
@@ -10834,7 +10816,7 @@ __metadata:
   version: 2.2.2
   resolution: "ethereumjs-block@npm:2.2.2"
   dependencies:
-    async: ^2.0.1
+    async: ^2.6.4
     ethereumjs-common: ^1.5.0
     ethereumjs-tx: ^2.1.1
     ethereumjs-util: ^5.0.0
@@ -10847,7 +10829,7 @@ __metadata:
   version: 1.7.1
   resolution: "ethereumjs-block@npm:1.7.1"
   dependencies:
-    async: ^2.0.1
+    async: ^2.6.4
     ethereum-common: 0.2.0
     ethereumjs-tx: ^1.2.2
     ethereumjs-util: ^5.0.0
@@ -10860,7 +10842,7 @@ __metadata:
   version: 4.0.4
   resolution: "ethereumjs-blockchain@npm:4.0.4"
   dependencies:
-    async: ^2.6.1
+    async: ^2.6.4
     ethashjs: ~0.0.7
     ethereumjs-block: ~2.2.2
     ethereumjs-common: ^1.5.0
@@ -10968,7 +10950,7 @@ __metadata:
   version: 4.2.0
   resolution: "ethereumjs-vm@npm:4.2.0"
   dependencies:
-    async: ^2.1.2
+    async: ^2.6.4
     async-eventemitter: ^0.2.2
     core-js-pure: ^3.0.1
     ethereumjs-account: ^3.0.0
@@ -10991,7 +10973,7 @@ __metadata:
   version: 2.6.0
   resolution: "ethereumjs-vm@npm:2.6.0"
   dependencies:
-    async: ^2.1.2
+    async: ^2.6.4
     async-eventemitter: ^0.2.2
     ethereumjs-account: ^2.0.3
     ethereumjs-block: ~2.2.0
@@ -11916,7 +11898,7 @@ __metadata:
   resolution: "ganache-core@npm:2.13.2"
   dependencies:
     abstract-leveldown: 3.0.0
-    async: 2.6.2
+    async: 2.6.4
     bip39: 2.5.0
     cachedown: 1.0.0
     clone: 2.1.2
@@ -14565,7 +14547,7 @@ __metadata:
   version: 3.8.0
   resolution: "json-rpc-engine@npm:3.8.0"
   dependencies:
-    async: ^2.0.1
+    async: ^2.6.4
     babel-preset-env: ^1.7.0
     babelify: ^7.3.0
     json-rpc-error: ^2.0.0
@@ -15421,7 +15403,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.11, lodash@npm:^4.17.12, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
+"lodash@npm:^4.17.11, lodash@npm:^4.17.12, lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -15772,7 +15754,7 @@ __metadata:
   version: 3.0.0
   resolution: "merkle-patricia-tree@npm:3.0.0"
   dependencies:
-    async: ^2.6.1
+    async: ^2.6.4
     ethereumjs-util: ^5.2.0
     level-mem: ^3.0.1
     level-ws: ^1.0.0
@@ -22930,7 +22912,7 @@ __metadata:
   version: 14.2.1
   resolution: "web3-provider-engine@npm:14.2.1"
   dependencies:
-    async: ^2.5.0
+    async: ^2.6.4
     backoff: ^2.5.0
     clone: ^2.0.0
     cross-fetch: ^2.1.0

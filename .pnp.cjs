@@ -16330,26 +16330,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["async", [\
-        ["npm:1.5.2", {\
-          "packageLocation": "./.yarn/cache/async-npm-1.5.2-e971969e27-fe5d6214d8.zip/node_modules/async/",\
-          "packageDependencies": [\
-            ["async", "npm:1.5.2"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:2.6.2", {\
-          "packageLocation": "./.yarn/cache/async-npm-2.6.2-fd61999996-e5e90a3bcc.zip/node_modules/async/",\
-          "packageDependencies": [\
-            ["async", "npm:2.6.2"],\
-            ["lodash", "npm:4.17.21"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:2.6.4", {\
           "packageLocation": "./.yarn/cache/async-npm-2.6.4-3155e80151-a52083fb32.zip/node_modules/async/",\
           "packageDependencies": [\
-            ["async", "npm:2.6.4"],\
-            ["lodash", "npm:4.17.21"]\
+            ["async", "npm:2.6.4"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -23268,7 +23252,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["ganache-core", "npm:2.13.2"],\
             ["abstract-leveldown", "npm:3.0.0"],\
-            ["async", "npm:2.6.2"],\
+            ["async", "npm:2.6.4"],\
             ["bip39", "npm:2.5.0"],\
             ["cachedown", "npm:1.0.0"],\
             ["clone", "npm:2.1.2"],\
@@ -27569,7 +27553,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/merkle-patricia-tree-npm-2.3.2-269e85f874-f6066a16e0.zip/node_modules/merkle-patricia-tree/",\
           "packageDependencies": [\
             ["merkle-patricia-tree", "npm:2.3.2"],\
-            ["async", "npm:1.5.2"],\
+            ["async", "npm:2.6.4"],\
             ["ethereumjs-util", "npm:5.2.1"],\
             ["level-ws", "npm:0.0.0"],\
             ["levelup", "npm:1.3.9"],\
