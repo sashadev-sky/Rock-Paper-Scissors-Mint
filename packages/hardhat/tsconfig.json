@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "composite": true,
         "target": "es5",
         "module": "commonjs",
         "strict": true,
@@ -12,6 +13,7 @@
         "./hardhat.config.ts",
         "./deploy",
         "./test",
-        "./typechain"
+        "./typechain",
+        "./utils"
     ]
 }

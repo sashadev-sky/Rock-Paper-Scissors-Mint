@@ -1,7 +1,18 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-.yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Swap the comments on the following lines if you don't wish to use zero-installs
+# Documentation here: https://yarnpkg.com/features/zero-installs
+!.yarn/cache
+#.pnp.*
+
 node_modules
 
 ## hardhat
@@ -9,8 +20,7 @@ node_modules
 **/generated/artifacts/build-info
 **/generated/contract-types
 **/generated/artifacts/contracts/**/*.dbg.json
-cache
-deployments
+**/generated/cache
 
 # OpenZeppelin
 .openzeppelin/unknown-*.json

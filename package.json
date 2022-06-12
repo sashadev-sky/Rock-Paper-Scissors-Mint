@@ -1,8 +1,12 @@
 {
   "name": "rps",
   "version": "1.0.0",
-  "repository": "https://github.com/sashadev-sky/DeApp.git",
-  "author": "Sasha Boginsky <41092741+sashadev-sky@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint.git"
+  },
+  "packageManager": "yarn@3.2.1",
+  "author": "Sasha Boginsky",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -31,5 +35,9 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "typescript": "^4.7.3"
   }
 }

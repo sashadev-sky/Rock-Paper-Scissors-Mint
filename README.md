@@ -1,91 +1,79 @@
-# Rock Paper Scissors
+# Rock Paper Scissors DeApp
 
 ## Components
 
-## Technologies
+### Technologies
+
+#### Development Tools
 
 - **Yarn** - package manager
+  - This project uses [Yarn Workspaces](https://yarnpkg.com/en/docs/workspaces/)
+  - [Read more]((https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%A7%B6-Workspaces#yarn-configuration)) about its configuration in the project Wiki
+- **Node.js**
+- **TypeScript**
+- **Git** - version control
+- **CRA** - create react app
 
-- **Solidity** (v.0.8.10)
+#### Ethereum
 
-- **Node**
+- **Solidity** (v.0.8.10) - implementing smart contracts
+- **[HardHat](https://hardhat.org/)** - Ethereum development environment
+- **ethers.js** (v.5) - library for interacting with the Ethereum blockhain
+- **OpenZeppelin** (v.4) - smart contract base implementation
+- **Etherscan** - contract verification
+  - <https://etherscan.io/myapikey>
 
-- **OpenZeppelin** (v.4)
+Decentralized storage
 
-- **HardHat**
+- [**NFT.Storage**](https://nft.storage/)
+- **IPFS (InterPlanetary File System)**
 
-- **ethers.js** (v.5)
+#### Frontend
 
-- Public Network Node Providers
-  - **Alchemy**
-  - **Infura**
-
-- **Etherscan** - transaction log
-
-- Decentralized Storage
-  - **NFT.Storage**
-  - **IPFS (InterPlanetary File System)**
-
-- **React**
+- **React** - JavaScript framework
 
   - **RainbowKit**
   - **Wagmi**
-  - **Material UI**
+  - **Material UI** - UI framework
   - **React Router**
 
-## Setup Yarn workspaces
+# 🏄‍♂️ Quick Start
 
-1. Initialize yarn
+Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://classic.yarnpkg.com/en/docs/install/).
 
-    ```bash
-    yarn init --yes
-    ```
+Run the following command to install the dependencies:
 
-2. Add workspaces
+  ```bash
+  yarn install
+  ```
 
-    ```bash
-    mkdir packages
-    cd packages
-    mkdir hardhat
-    yarn init --yes
-    npx create-react-app frontend --template typescript
-    ```
+Run a Development React Frontend Server with Hot-reloading
 
-    - For the frontend project, set `name: rps-frontend`
-    - For the hardhat project, set `name: rps-hardhat`
+```bash
+yarn start
+```
 
-3. In the root `package.json` add a `private: true` field and `workspaces` field onto the end
+## Setup
 
-    ```json
-    "private": true,
-    "workspaces": {
-      "packages": [
-        "packages/*"
-      ]
-    }
-    ```
+This project makes use of the following public network node providers
 
-4. Add your scripts: and reference the nested package script they should run with `$ yarn workspace <workspace-name> <command_name>` with the workspace name being the one you specified in the `package.json`, not the name of the folder that holds it
+- **Alchemy**
+- **Infura**
 
-5. Run `$ yarn install` from the root to install dependencies for all packages
+### Hardhat
 
-## Creating a new Hardhat project
+1. Plugins
 
-1. Package Manager
+     - **`ethers`** and **`@nomiclabs/hardhat-ethers`**, **`hardhat-deploy`**: allows using `ethers` from anywhere in the workspace
+     - **`hardhat-deploy-ethers`**: extends the `ethers` object with addtional `hardhat-deploy` specific functionality
+     - **`dotevn`**: add support for referencing environment variables from `.env`
+     - **`typescript`** and **`ts-node`**: TypeScript support
 
-    ```bash
-    yarn workspace rps-hardhat add -D hardhat
-    ```
+      ```bash
+      yarn workspace rps-hardhat add -D hardhat ethers @nomiclabs/hardhat-ethers hardhat-deploy hardhat-deploy-ethers @nomiclabs/hardhat-etherscan chai chai-ethers mocha @types/chai @types/mocha @types/node dotenv typescript ts-node
+      ```
 
-2. Plugins
-
-     - We use `ethers` in our deployment scripts, so we need to install it and the `ethers` and `@nomiclabs/hardhat-ethers` plugin
-
-        ```bash
-        yarn workspace rps-hardhat add -D hardhat-deploy hardhat-deploy-ethers ethers @nomiclabs/hardhat-etherscan chai chai-ethers mocha @types/chai @types/mocha @types/node typescript ts-node dotenv
-        ```
-
-3. Create a `.env` file in the `hardhat` folder and add the following variables:
+2. Create a `.env` file in the `hardhat` folder and add the following variables:
 
     ```dotfile
     ALCHEMY_STAGING_KEY=
@@ -93,7 +81,7 @@
     MNEMONIC=
     ```
 
-4. Create a `hardhat.config.ts`
+3. Create a `hardhat.config.ts` in the `hardhat` folder
 
     ```typescript
     import { config as dotenvConfig } from 'dotenv';
@@ -144,7 +132,7 @@
     export default config;
     ```
 
-5. Create a `tsconfig.json`
+4. Create a `tsconfig.json` in the `hardhat` folder
 
 ## Writing smart contracts
 
