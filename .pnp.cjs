@@ -26957,7 +26957,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["errno", "npm:0.1.8"],\
             ["prr", "npm:0.0.0"],\
             ["readable-stream", "npm:1.0.34"],\
-            ["semver", "npm:2.3.2"],\
+            ["semver", "npm:4.3.6"],\
             ["xtend", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
@@ -28407,7 +28407,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize-package-data", "npm:2.5.0"],\
             ["hosted-git-info", "npm:2.8.9"],\
             ["resolve", "patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b"],\
-            ["semver", "npm:5.7.1"],\
+            ["semver", "npm:4.3.6"],\
             ["validate-npm-package-license", "npm:3.0.4"]\
           ],\
           "linkType": "HARD"\
@@ -33230,10 +33230,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["semver", [\
-        ["npm:2.3.2", {\
-          "packageLocation": "./.yarn/cache/semver-npm-2.3.2-c256fd5557-e0649fb18a.zip/node_modules/semver/",\
+        ["npm:4.3.6", {\
+          "packageLocation": "./.yarn/cache/semver-npm-4.3.6-18e5d51190-660566e4f8.zip/node_modules/semver/",\
           "packageDependencies": [\
-            ["semver", "npm:2.3.2"]\
+            ["semver", "npm:4.3.6"]\
           ],\
           "linkType": "HARD"\
         }],\
