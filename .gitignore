@@ -18,11 +18,13 @@ node_modules
 ## hardhat
 **/generated/artifacts/@openzeppelin
 **/generated/artifacts/build-info
-**/generated/contract-types
 **/generated/artifacts/contracts/**/*.dbg.json
 **/generated/cache
 
 # OpenZeppelin
+# It is advised that you commit to source control the files for all networks except the development ones
+# (you may see them as .openzeppelin/unknown-*.json).
+# Documentation here: https://github.com/OpenZeppelin/openzeppelin-upgrades
 .openzeppelin/unknown-*.json
 
 # testing
@@ -36,10 +38,6 @@ build
 keystore
 certs
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
 *.log
 npm-debug.log*

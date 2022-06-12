@@ -6,8 +6,8 @@ import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { RainbowKitProvider } from '@sboginsky17/rainbowkit';
 import { WagmiConfig } from 'wagmi';
 
-import App from './Components/App';
-import ScrollToTop from './Components/Router/ScrollToTop';
+import App from './components/App';
+import ScrollToTop from './components/Router/ScrollToTop';
 import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 

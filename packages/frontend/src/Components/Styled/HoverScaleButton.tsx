@@ -1,7 +1,7 @@
+import { HTMLAttributes } from 'react';
 import { LoadingButton, LoadingButtonProps } from '@mui/lab';
 import { Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { HTMLAttributes } from 'react';
 
 import { TRANSFORMS } from '../../constants/styling';
 

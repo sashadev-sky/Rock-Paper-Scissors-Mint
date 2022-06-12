@@ -7,6 +7,8 @@ import '@nomiclabs/hardhat-ethers';
 import '@openzeppelin/hardhat-upgrades';
 import { HardhatUserConfig, task } from 'hardhat/config';
 import 'hardhat-deploy';
+import 'hardhat-deploy-ethers';
+import '@nomiclabs/hardhat-ethers';
 import '@typechain/hardhat';
 import '@typechain/ethers-v5';
 
@@ -49,9 +51,6 @@ const config: HardhatUserConfig = {
       rinkeby: process.env.ETHERSCAN_STAGING_KEY || '6EAGC2DEG6PP3M1GP1I86QJPQAUE4ESW1W',
       mainnet: process.env.ETHERSCAN_PRODUCTION_KEY || '6EAGC2DEG6PP3M1GP1I86QJPQAUE4ESW1W',
     },
-  },
-  typechain: {
-    outDir: '../frontend/src/generated/contract-types',
   },
 };
 

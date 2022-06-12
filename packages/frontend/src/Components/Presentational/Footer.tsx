@@ -60,7 +60,10 @@ const Footer = ({ chainId = CHAIN_ID }: Props) => (
         justifyContent='center'
         mb={4}
       >
-        <Grid item mx={2}>
+        <Grid
+          item
+          mx={2}
+        >
           <RouterLink to='/'>
             <Typography
               color='text.primary'

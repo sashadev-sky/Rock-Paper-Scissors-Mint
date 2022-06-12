@@ -1,8 +1,8 @@
 import { cloneElement, useEffect } from 'react';
 import { Typography } from '@mui/material';
-import { animated, easings, useSpring } from 'react-spring';
+import { animated, easings, useSpring } from '@react-spring/web';
 
-import { AnimatedComponentProps } from '../../types/props';
+import { AnimatedComponentProps } from '../../types';
 
 const AnimatedTypography = (props: AnimatedComponentProps) => {
   const [styles, set] = useSpring(() => ({

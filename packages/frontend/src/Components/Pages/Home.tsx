@@ -27,8 +27,8 @@ import {
 } from 'wagmi';
 
 import { PHASE, CHAIN_ID, CONTRACT_PARAMS, GAS_LIMIT } from '../../constants';
-import { getUserMintingAllowanceMsg, truthyOrZero } from '../../utils';
-import { isSoldOut } from '../../utils/contract';
+import { truthyOrZero } from '../../utils';
+import { getUserMintingAllowanceMsg, isSoldOut } from "../../utils/contract";
 import { isCorrectChainId } from '../../utils/ethereum';
 import Connect from '../Connect/Connect';
 import MintStats from '../Presentational/Contract/MintStats';
@@ -267,10 +267,17 @@ const Home = () => {
       )}
       <Main>
         <Grid container>
-          <Grid item xs={12}>
+          <Grid
+            item
+            xs={12}
+          >
             <Header />
           </Grid>
-          <Grid item xs={8} m={theme.spacing(0, 'auto')}>
+          <Grid
+            item
+            xs={8}
+            m={theme.spacing(0, 'auto')}
+          >
             <SubHeader />
           </Grid>
         </Grid>
@@ -352,19 +359,23 @@ const Home = () => {
                       mb: 4,
                     }}
                   >
-                    <Collapse in={!!supplyLimit} timeout={1000}>
+                    <Collapse
+                      in={!!supplyLimit}
+                      timeout={1000}
+                    >
                       <CardContent>
                         {!!supplyLimit ? (
-                          <MintStats minted={nftsMinted} total={supplyLimit} />
+                          <MintStats
+                            minted={nftsMinted}
+                            total={supplyLimit}
+                          />
                         ) : (
                           <LinearProgress variant='query' />
                         )}
                       </CardContent>
                     </Collapse>
                     <Collapse
-                      in={
-                        !!(walletAddress && isCorrectChainId(chainId) && status)
-                      }
+                      in={!!(walletAddress && isCorrectChainId(chainId) && status)}
                       mountOnEnter
                       unmountOnExit
                       timeout={1000}

@@ -1,7 +1,7 @@
 import { cloneElement } from 'react';
 import { useScrollTrigger } from '@mui/material';
 
-import { AnimatedComponentProps } from '../../../types/props';
+import { AnimatedComponentProps } from '../../../types';
 
 const HideOnScroll = (props: AnimatedComponentProps) => {
   const isOnTop = !useScrollTrigger({

@@ -1,4 +1,4 @@
-# Rock Paper Scissors DeApp
+# Rock Paper Scissors Dapp
 
 ## Components
 
@@ -8,7 +8,7 @@
 
 - **Yarn** - package manager
   - This project uses [Yarn Workspaces](https://yarnpkg.com/en/docs/workspaces/)
-  - [Read more]((https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%A7%B6-Workspaces#yarn-configuration)) about its configuration in the project Wiki
+  - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%A7%B6-Yarn-Configuration) about its configuration in the project Wiki
 - **Node.js**
 - **TypeScript**
 - **Git** - version control
@@ -18,14 +18,20 @@
 
 - **Solidity** (v.0.8.10) - implementing smart contracts
 - **[HardHat](https://hardhat.org/)** - Ethereum development environment
+  - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%91%B7-Hardhat-Configuration) about its configuration in the project Wiki
 - **ethers.js** (v.5) - library for interacting with the Ethereum blockhain
 - **OpenZeppelin** (v.4) - smart contract base implementation
 - **Etherscan** - contract verification
   - <https://etherscan.io/myapikey>
 
+Public network node providers
+
+- **Alchemy**
+- **Infura**
+
 Decentralized storage
 
-- [**NFT.Storage**](https://nft.storage/)
+- **[NFT.Storage](https://nft.storage/)**
 - **IPFS (InterPlanetary File System)**
 
 #### Frontend
@@ -39,100 +45,17 @@ Decentralized storage
 
 # 🏄‍♂️ Quick Start
 
-Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://classic.yarnpkg.com/en/docs/install/).
+Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://yarnpkg.com/getting-started/install).
 
-Run the following command to install the dependencies:
+## Hardhat
 
-  ```bash
-  yarn install
+Create a `.env` file in the `hardhat` folder and add the following variables:
+
+  ```dotfile
+  ALCHEMY_STAGING_KEY=
+  ALCHEMY_PRODUCTION_KEY=
+  MNEMONIC=
   ```
-
-Run a Development React Frontend Server with Hot-reloading
-
-```bash
-yarn start
-```
-
-## Setup
-
-This project makes use of the following public network node providers
-
-- **Alchemy**
-- **Infura**
-
-### Hardhat
-
-1. Plugins
-
-     - **`ethers`** and **`@nomiclabs/hardhat-ethers`**, **`hardhat-deploy`**: allows using `ethers` from anywhere in the workspace
-     - **`hardhat-deploy-ethers`**: extends the `ethers` object with addtional `hardhat-deploy` specific functionality
-     - **`dotevn`**: add support for referencing environment variables from `.env`
-     - **`typescript`** and **`ts-node`**: TypeScript support
-
-      ```bash
-      yarn workspace rps-hardhat add -D hardhat ethers @nomiclabs/hardhat-ethers hardhat-deploy hardhat-deploy-ethers @nomiclabs/hardhat-etherscan chai chai-ethers mocha @types/chai @types/mocha @types/node dotenv typescript ts-node
-      ```
-
-2. Create a `.env` file in the `hardhat` folder and add the following variables:
-
-    ```dotfile
-    ALCHEMY_STAGING_KEY=
-    ALCHEMY_PRODUCTION_KEY=
-    MNEMONIC=
-    ```
-
-3. Create a `hardhat.config.ts` in the `hardhat` folder
-
-    ```typescript
-    import { config as dotenvConfig } from 'dotenv';
-    dotenvConfig();
-
-    import '@nomiclabs/hardhat-ethers';
-    import { HardhatUserConfig } from 'hardhat/types';
-    import 'hardhat-deploy';
-    import 'hardhat-deploy-ethers';
-
-    const config: HardhatUserConfig = {
-      solidity: {
-        version: '0.8.10', // must match the solidity version you use in your contract
-        settings: {
-          optimizer: {
-            // prevent ProviderError: max code size exceeded
-            enabled: true,
-            runs: 1,
-          },
-        },
-      },
-      networks: { // supported networks
-        localhost: {
-          url: 'http://localhost:8545',
-          /**
-           * if there is no mnemonic, it will just use account 0 of the hardhat node to deploy
-           * (you can put in a mnemonic here to set the deployer locally like so:
-           *
-           *     accounts: {
-           *       mnemonic: process.env.MNEMONIC,
-           *    },
-           * )
-           **/
-        },
-        rinkeby: {
-          url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.ALCHEMY_STAGING_KEY}`,
-          accounts: { mnemonic: process.env.MNEMONIC },
-        },
-        mainnet: {
-          url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_PRODUCTION_KEY}`,
-          accounts: {
-            mnemonic: process.env.MNEMONIC,
-          },
-        },
-      },
-    };
-
-    export default config;
-    ```
-
-4. Create a `tsconfig.json` in the `hardhat` folder
 
 ## Writing smart contracts
 
@@ -143,33 +66,12 @@ See [How to Create and Deploy an ERC1155 NFT](./docs/how_to_create_an_ERC1155_nf
 1. OpenZeppelin
 
     ```bash
-    yarn workspace rps-hardhat add -D @openzeppelin/hardhat-upgrades @openzeppelin/contracts-upgradeable
+    yarn workspace rps-hardhat add -D @openzeppelin/contracts-upgradeable
     ```
 
-2. Update the `hardhat.config.ts` imports
-    <br>
+2. Create a `src` directory and add your `.sol` contract to it
 
-    ```typescript
-    // import ...
-    import '@openzeppelin/hardhat-upgrades';
-    // import ...
-    ```
-
-3. While by default hardhat uses `contracts` as the source folder, we prefer to change it to `frontend/src/generated` so that our frontend can access the ABI of the deployed contract. Edit your `hardhat.config.ts` file with the new config:
-
-    ```typescript
-    paths: {
-      cache: '../frontend/src/generated/cache',
-      artifacts: '../frontend/src/generated/artifacts',
-    },
-    typechain: {
-      outDir: '../frontend/src/generated/contract-types'
-    }
-    ```
-
-4. Create a `src` directory and add your `.sol` contract to it
-
-5. Compile
+3. Compile
 
     ```bash
     yarn compile
@@ -333,27 +235,13 @@ yarn hardhat
 
 ## Frontend
 
-1. Install dependencies
+1. Install development dependencies to customize `react-scripts`
 
     ```bash
-    yarn workspace rps-hardhat add -D typechain @typechain/hardhat typechain @typechain/ethers-v5 ts-morph ts-generator
+    yarn workspace rps-hardhat add -D env-cmd customize-cra react-app-rewired
     ```
 
-2. In `hardhat.config.ts` add imports
-
-    ```typescript
-    import '@typechain/hardhat';
-    import '@typechain/ethers-v5';
-    ```
-
-3. Compile again and start up the development server with hot reloading
-
-    ```bash
-    yarn compile
-    yarn start
-    ```
-
-4. Create a `.env` file in the `frontend` folder and add the following variables:
+2. Create a `.env` file in the `frontend` folder and add the following variables:
 
     ```dotfile
     REACT_APP_ALCHEMY_STAGING_KEY=
@@ -366,4 +254,10 @@ yarn hardhat
 
     - After deploying a new contract, you will need to update the `REACT_APP_RINKEBY_PROXY_CONTRACT_ADDRESS` or `REACT_APP_HOMESTEAD_PROXY_CONTRACT_ADDRESS` variables.
 
-5. In `src/constants/index.ts` update the imported contract at the top to your contract's path, the variables under "SEO and Contract Related Info" to match your Application, and the `CHAIN_ID` variable under "Network Related Info" to match the default chain to use (1 (homestead) or 4 (rinkeby)).
+3. In `src/constants/index.ts` update the imported contract at the top to your contract's path, the variables under "SEO and Contract Related Info" to match your Application, and the `CHAIN_ID` variable under "Network Related Info" to match the default chain to use (1 (homestead) or 4 (rinkeby)).
+
+4. Start up the development server with hot reloading
+
+    ```bash
+    yarn start
+    ```

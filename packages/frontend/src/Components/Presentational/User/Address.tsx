@@ -1,6 +1,6 @@
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
 
-import { getShortWalletAddress } from '../../../utils';
+import { getShortWalletAddress } from '../../../utils/wallet';
 import WalletIcon from '../../Icons/WalletIcon';
 
 interface Props {

@@ -61,9 +61,9 @@ Additionally there are multiple custom extensions, including:
 
 ### Settings (`IERC1155MetadataURI`)
 
-- **Name**: My 1155 Horse
+- **Name**: RPS
   - function: `name() -> string` - returns the token collection name.
-- **URI**: <https://ipfs.io/ipfs/bafybeiauk67zy6lubpdhc4micdd3l3ipi7nfobqhoi3ta5bg7rwrs6rrhi/{id}.json>
+- **URI**: <https://ipfs.io/ipfs/bafybeicxlrrqm5l6uqtngfmdgrzzqrklu2vdqwg3dx32fcqpffh7qyryju/{id}.json>
   - Location of the metadata. Clients will replace any instance of `{id}` in this string with the `tokenId`.
 
 ### Features

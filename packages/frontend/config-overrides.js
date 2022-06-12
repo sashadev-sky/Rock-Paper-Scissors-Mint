@@ -14,12 +14,12 @@ module.exports = {
       url: require.resolve('url'),
       assert: require.resolve('assert'),
       crypto: require.resolve('crypto-browserify'),
-      util: require.resolve('util'),
+      util: require.resolve('util/'),
       http: require.resolve('stream-http'),
       https: require.resolve('https-browserify'),
       os: require.resolve('os-browserify/browser'),
       process: require.resolve('process/browser'),
-      buffer: require.resolve('buffer'),
+      buffer: require.resolve('buffer/'),
       stream: require.resolve('stream-browserify'),
     });
     config.resolve.fallback = fallback;
