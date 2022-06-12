@@ -24,7 +24,7 @@
   "scripts": {
     "start": "env-cmd -f .env react-app-rewired start",
     "build": "env-cmd -f .env react-app-rewired build",
-    "surge": "yarn build && surge build",
+    "surge": "yarn build && surge --domain rock-paper-scissors-nft.surge.sh build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

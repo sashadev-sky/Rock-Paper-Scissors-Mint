@@ -37709,7 +37709,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["which-module", "npm:1.0.0"],\
             ["window-size", "npm:0.2.0"],\
             ["y18n", "npm:3.2.2"],\
-            ["yargs-parser", "npm:2.4.1"]\
+            ["yargs-parser", "npm:21.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -37733,15 +37733,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:2.4.1", {\
-          "packageLocation": "./.yarn/cache/yargs-parser-npm-2.4.1-6224919c77-f57946a93a.zip/node_modules/yargs-parser/",\
-          "packageDependencies": [\
-            ["yargs-parser", "npm:2.4.1"],\
-            ["camelcase", "npm:3.0.0"],\
-            ["lodash.assign", "npm:4.2.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:20.2.4", {\
           "packageLocation": "./.yarn/cache/yargs-parser-npm-20.2.4-1de20916a6-d251998a37.zip/node_modules/yargs-parser/",\
           "packageDependencies": [\
@@ -37753,6 +37744,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yargs-parser-npm-20.2.9-a1d19e598d-8bb69015f2.zip/node_modules/yargs-parser/",\
           "packageDependencies": [\
             ["yargs-parser", "npm:20.2.9"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:21.0.1", {\
+          "packageLocation": "./.yarn/cache/yargs-parser-npm-21.0.1-b778fd3462-c3ea2ed12c.zip/node_modules/yargs-parser/",\
+          "packageDependencies": [\
+            ["yargs-parser", "npm:21.0.1"],\
+            ["camelcase", "npm:3.0.0"],\
+            ["lodash.assign", "npm:4.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
