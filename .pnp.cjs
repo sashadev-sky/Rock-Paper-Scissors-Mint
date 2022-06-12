@@ -27807,13 +27807,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["minimist", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/cache/minimist-npm-1.2.3-ca6fbac939-ffa82a3089.zip/node_modules/minimist/",\
-          "packageDependencies": [\
-            ["minimist", "npm:1.2.3"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:1.2.6", {\
           "packageLocation": "./.yarn/cache/minimist-npm-1.2.6-f4cee4b4af-d15428cd1e.zip/node_modules/minimist/",\
           "packageDependencies": [\
@@ -34476,7 +34469,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["colors", "npm:1.4.0"],\
             ["inquirer", "npm:6.5.2"],\
             ["is-domain", "npm:0.0.1"],\
-            ["minimist", "npm:1.2.3"],\
+            ["minimist", "npm:1.2.6"],\
             ["moniker", "npm:0.1.2"],\
             ["netrc", "npm:0.1.4"],\
             ["progress", "npm:1.1.8"],\

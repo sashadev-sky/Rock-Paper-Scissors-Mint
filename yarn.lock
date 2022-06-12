@@ -14640,7 +14640,7 @@ __metadata:
   version: 1.0.1
   resolution: "json5@npm:1.0.1"
   dependencies:
-    minimist: ^1.2.0
+    minimist: ^1.2.6
   bin:
     json5: lib/cli.js
   checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
@@ -15982,14 +15982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:1.2.3":
-  version: 1.2.3
-  resolution: "minimist@npm:1.2.3"
-  checksum: ffa82a3089dffc471afcf1cca93bd687077ed4c7deaace6724fb2e575759fb0c29316526065f58eba420cf58f7f0e2e9ee80423b5cc4fd6af549074e7e0725d3
-  languageName: node
-  linkType: hard
-
-"minimist@npm:^1.2.0, minimist@npm:^1.2.6, minimist@npm:~1.2.6":
+"minimist@npm:1.2.6, minimist@npm:^1.2.6, minimist@npm:~1.2.6":
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
   checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
@@ -17168,7 +17161,7 @@ __metadata:
     fs-extra: ^7.0.1
     is-ci: ^2.0.0
     klaw-sync: ^6.0.0
-    minimist: ^1.2.0
+    minimist: ^1.2.6
     rimraf: ^2.6.3
     semver: ^5.6.0
     slash: ^2.0.0
@@ -17190,7 +17183,7 @@ __metadata:
     fs-extra: ^7.0.1
     is-ci: ^2.0.0
     klaw-sync: ^6.0.0
-    minimist: ^1.2.0
+    minimist: ^1.2.6
     open: ^7.4.2
     rimraf: ^2.6.3
     semver: ^5.6.0
@@ -21258,7 +21251,7 @@ __metadata:
     colors: 1.4.0
     inquirer: ^6.2.2
     is-domain: 0.0.1
-    minimist: 1.2.3
+    minimist: 1.2.6
     moniker: 0.1.2
     netrc: 0.1.4
     progress: 1.1.8
