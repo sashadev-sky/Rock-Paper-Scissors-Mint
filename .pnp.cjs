@@ -23183,7 +23183,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["keccak", "npm:3.0.1"],\
             ["level-sublevel", "npm:6.6.4"],\
             ["levelup", "npm:3.1.1"],\
-            ["lodash", "npm:4.17.20"],\
+            ["lodash", "npm:4.17.21"],\
             ["lru-cache", "npm:5.1.1"],\
             ["merkle-patricia-tree", "npm:3.0.0"],\
             ["patch-package", "npm:6.2.2"],\
@@ -26931,13 +26931,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["lodash", [\
-        ["npm:4.17.20", {\
-          "packageLocation": "./.yarn/cache/lodash-npm-4.17.20-c0db62021c-b31afa0973.zip/node_modules/lodash/",\
-          "packageDependencies": [\
-            ["lodash", "npm:4.17.20"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:4.17.21", {\
           "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-eb835a2e51.zip/node_modules/lodash/",\
           "packageDependencies": [\
