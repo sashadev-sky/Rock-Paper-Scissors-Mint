@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.rainbow {
+  background-color: #000;
+  background-image: linear-gradient(to right, var(--light-purple), var(--purple), var(--blue), var(--green), var(--yellow), var(--orange), var(--red));
+}
+
+.h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+/* FatFrank */
+@font-face {
+  font-family: 'Fatfrank';
+  src: url('../assets/fonts/FatFrank/FatFrank-Regular.eot');
+  src: url('../assets/fonts/FatFrank/FatFrank-Regular.eot?') format('embedded-opentype'),
+    url('../assets/fonts/FatFrank/FatFrank-Regular.woff') format('woff'),
+    url('../assets/fonts/FatFrank/FatFrank-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Trade Gothic */
+@font-face {
+  font-family: 'Trade Gothic';
+  src: url('../assets/fonts/TradeGothic/TradeGothicLTStd-BoldExt.otf') format('opentype');
+  font-style: normal;
+}
+
+.fat-frank {
+  font-family: fatfrank, 'Comic Sans MS', sans-serif;
+  letter-spacing: 0;
+}
+
+.trade-gothic {
+  font-family: Trade Gothic, sans-serif;
+}

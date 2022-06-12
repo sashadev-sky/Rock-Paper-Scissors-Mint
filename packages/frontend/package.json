@@ -1,0 +1,77 @@
+{
+  "name": "rps-frontend",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-syntax-flow": "^7.17.12",
+    "@babel/plugin-transform-react-jsx": "^7.17.12",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/lab": "^5.0.0-alpha.78",
+    "@mui/material": "^5.6.2",
+    "@sboginsky17/rainbowkit": "^0.3.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
+    "ethers": "^5.6.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-helmet-async": "^1.3.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "react-spring": "^9.4.5",
+    "surge": "^0.23.1",
+    "wagmi": "^0.4.4",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "env-cmd -f .env react-app-rewired start",
+    "build": "env-cmd -f .env react-app-rewired build",
+    "surge": "yarn build && surge build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.11.27",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
+    "@types/react-helmet": "^6.1.5",
+    "assert": "^2.0.0",
+    "babel-plugin-import": "^1.13.5",
+    "browserify-fs": "^1.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "customize-cra": "^1.0.0",
+    "env-cmd": "^10.1.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "typescript": "^4.6.3",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
+  }
+}

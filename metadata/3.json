@@ -1,0 +1,11 @@
+{
+    "name": "Rock",
+    "description": "Rock!",
+    "image": "https://ipfs.io/ipfs/bafybeigrn6nttm6x74ybicppdtxqu3mslhezxgnnwvvnz7q6xq4nvr7jkm/Rock/stone.png",
+    "attributes": [
+        {
+            "trait_type": "base",
+            "value": "Rock"
+        }
+    ]
+}

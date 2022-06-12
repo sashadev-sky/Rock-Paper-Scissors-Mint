@@ -1,0 +1,15 @@
+{
+    "name": "Scissors (Pink)",
+    "description": "Scissors!",
+    "image": "https://ipfs.io/ipfs/bafybeigrn6nttm6x74ybicppdtxqu3mslhezxgnnwvvnz7q6xq4nvr7jkm/Scissors/scissors-pink.png",
+    "attributes": [
+        {
+            "trait_type": "base",
+            "value": "Scissors"
+        },
+        {
+            "trait_type": "color",
+            "value": "pink"
+        }
+    ]
+}

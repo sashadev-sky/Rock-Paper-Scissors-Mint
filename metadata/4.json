@@ -1,0 +1,15 @@
+{
+    "name": "Rock (Blue)",
+    "description": "Rock!",
+    "image": "https://ipfs.io/ipfs/bafybeigrn6nttm6x74ybicppdtxqu3mslhezxgnnwvvnz7q6xq4nvr7jkm/Rock/stone-blue.png",
+    "attributes": [
+        {
+            "trait_type": "base",
+            "value": "Rock"
+        },
+        {
+            "trait_type": "color",
+            "value": "blue"
+        }
+    ]
+}

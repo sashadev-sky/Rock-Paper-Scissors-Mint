@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+.yarn
+node_modules
+
+## hardhat
+**/generated/artifacts/@openzeppelin
+**/generated/artifacts/build-info
+**/generated/contract-types
+**/generated/artifacts/contracts/**/*.dbg.json
+cache
+deployments
+
+# OpenZeppelin
+.openzeppelin/unknown-*.json
+
+# testing
+/coverage
+
+# production
+build
+
+# misc
+.DS_Store
+keystore
+certs
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+typechain-types
+ipfs/
