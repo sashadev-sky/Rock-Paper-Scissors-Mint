@@ -9,6 +9,7 @@ import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 
 import { APP_NAME, CHAIN_ID, CHAIN_IDS } from '../constants';
 import { needsInjectedWalletFallback } from '../utils/wallet';
+import { ThemeColor } from '../theme';
 
 export const { chains, provider, webSocketProvider } = configureChains(
   CHAIN_ID === 4 ? [chain.rinkeby, chain.mainnet] : [chain.mainnet],
@@ -26,11 +27,11 @@ export const { chains, provider, webSocketProvider } = configureChains(
 
 const connectors = connectorsForWallets([
   {
-    groupName: "Recommended",
+    groupName: 'Recommended',
     wallets: [wallet.metaMask({ chains, shimDisconnect: true })],
   },
   {
-    groupName: "Others",
+    groupName: 'Others',
     wallets: [
       wallet.rainbow({ chains }),
       wallet.coinbase({ appName: APP_NAME, chains }),
@@ -44,7 +45,7 @@ const connectors = connectorsForWallets([
 ]);
 
 export const customTheme = lightTheme({
-  accentColor: '#ed143d', // crimson
+  accentColor: ThemeColor.crimson
 });
 
 export const wagmiClient = createClient({

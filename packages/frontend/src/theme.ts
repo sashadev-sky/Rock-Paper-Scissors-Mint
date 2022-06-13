@@ -29,33 +29,18 @@ declare module "@mui/material/Typography" {
   }
 }
 
-const palette = createPalette({
-  neutral: {
-    main: '#f5f5f5'  // whitesmoke
-  },
-  background: {
-    default: '#f5f5f5',  // whitesmoke
-  },
-  primary: {
-    main: '#4db6ac',  // teal
-    contrastText: '#fff',
-  },
-  secondary: {
-    main: '#c4d1d7', // bluegrey
-  },
-  error: {
-    main: '#de2114',
-    light: '#e8675a',
-    dark: '#9e1c10',
-  },
-  success: {
-    main: '#4caf50',
-  },
-  text: {
-    primary: '#ed143d',  // crimson
-    secondary: '#BF4C41',  // Cinnabar
-  },
-});
+export enum ThemeColor {
+  crimson = '#ed143d',
+  cinnabar = '#BF4C41',
+  whitesmoke = '#f5f5f5',
+  teal = '#4db6ac',
+  blueGrey = '#c4d1d7',
+  error = '#de2114',
+  errorLight = '#e8675a',
+  errorDark = '#9e1c10',
+  success = '#4caf50',
+  transparent = "#00000000",
+}
 
 let baseTheme = createTheme({
   // if we set any of the default breakpoints to custom values, we need to update them all
@@ -73,9 +58,38 @@ let baseTheme = createTheme({
       desktop: 1536, // default value
     },
   },
-  typography: createTypography(palette, {
-    fontFamily: ['FatFrank', 'Comic Sans MS', 'sans-serif'].join(','),
-  }),
+});
+
+const palette = createPalette({
+  neutral: {
+    main: ThemeColor.whitesmoke,
+  },
+  background: {
+    default: ThemeColor.whitesmoke,
+  },
+  primary: {
+    main: ThemeColor.teal,
+    contrastText: baseTheme.palette.common.white,
+  },
+  secondary: {
+    main: ThemeColor.blueGrey,
+  },
+  error: {
+    main: ThemeColor.error,
+    light: ThemeColor.errorLight,
+    dark: ThemeColor.errorDark,
+  },
+  success: {
+    main: ThemeColor.success,
+  },
+  text: {
+    primary: ThemeColor.crimson,
+    secondary: ThemeColor.cinnabar,
+  },
+});
+
+baseTheme.typography = createTypography(palette, {
+  fontFamily: ['FatFrank', 'Comic Sans MS', 'sans-serif'].join(','),
 });
 
 baseTheme = responsiveFontSizes(baseTheme, {
@@ -186,11 +200,9 @@ const typography = {
 };
 
 
-const theme = createTheme(
-  deepmerge(baseTheme, {
-    palette,
-    typography,
-  })
-);
+const theme = deepmerge(baseTheme, {
+  palette,
+  typography,
+});
 
 export default theme;

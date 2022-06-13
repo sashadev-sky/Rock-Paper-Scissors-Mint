@@ -3,12 +3,10 @@ dotenvConfig();
 
 import '@nomiclabs/hardhat-waffle';
 import '@nomiclabs/hardhat-etherscan';
-import '@nomiclabs/hardhat-ethers';
 import '@openzeppelin/hardhat-upgrades';
 import { HardhatUserConfig, task } from 'hardhat/config';
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
-import '@nomiclabs/hardhat-ethers';
 import '@typechain/hardhat';
 import '@typechain/ethers-v5';
 

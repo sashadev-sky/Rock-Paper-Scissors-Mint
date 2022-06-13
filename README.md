@@ -77,7 +77,7 @@ Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://yarnp
 
 ## 👷 Hardhat
 
-> The `hardhat` workspace is used to compile and deploy smart contracts.
+> The `rps-hardhat` workspace uses Hardhat as the platform layer to orchestrate all tasks related to smart contract development.
 
 Create a `.env` file in the `hardhat` folder and add the following variables:
 
@@ -263,9 +263,17 @@ To see a list of all tasks available:
 yarn hardhat
 ```
 
+## Linting
+
+To run the Solidity linter:
+
+```bash
+yarn workspace rps-hardhat lint
+```
+
 ## Frontend
 
-> The `frontend` workspace is used to create the interface for our contract with "Ethereum components" (ConnectButton, WalletAddress, etc.) and read and write to it via hooks.
+> The `rps-frontend` workspace uses React as the framework to create the interface for our contract with "Ethereum components" (ConnectButton, WalletAddress, etc.) and read and write to it via hooks.
 
 1. Install development dependencies to customize `react-scripts`
 
