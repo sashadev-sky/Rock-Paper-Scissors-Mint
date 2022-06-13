@@ -10,7 +10,7 @@ module.exports = {
     // don't overwrite the default cra resolve.fallback
     const fallback = config.resolve.fallback || {};
     Object.assign(fallback, {
-      fs: require.resolve('browserify-fs'),
+      fs: false,
       url: require.resolve('url'),
       assert: require.resolve('assert'),
       crypto: require.resolve('crypto-browserify'),
