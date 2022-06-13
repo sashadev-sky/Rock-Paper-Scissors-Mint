@@ -1,5 +1,6 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
+  Breakpoint,
   Button,
   Grid,
   IconButton,
@@ -26,8 +27,8 @@ const Connect = ({
   isConnecting = false,
   rounded = false
 }: Props) => {
-  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile'));
-  const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile'));
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile' as Breakpoint));
+  const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile' as Breakpoint));
   const mobileBreakpoint = isMobile || isTinyMobile;
 
   return (

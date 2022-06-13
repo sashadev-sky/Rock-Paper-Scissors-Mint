@@ -11,7 +11,7 @@ import { APP_NAME, CHAIN_ID, CHAIN_IDS } from '../constants';
 import { needsInjectedWalletFallback } from '../utils/wallet';
 
 export const { chains, provider, webSocketProvider } = configureChains(
-  CHAIN_ID === 4 ? [chain.mainnet, chain.rinkeby] : [chain.mainnet],
+  CHAIN_ID === 4 ? [chain.rinkeby] : [chain.mainnet],
   [
     alchemyProvider({ alchemyId: CHAIN_IDS[CHAIN_ID]?.alchemyId }),
     infuraProvider({ infuraId: process.env.REACT_APP_INFURA_ID }),

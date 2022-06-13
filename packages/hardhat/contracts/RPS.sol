@@ -27,13 +27,13 @@ contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, Pau
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
     // max total supply RPC's
-    uint256 public constant supplyLimit = 9;
+    uint256 public constant SUPPLY_LIMIT = 9;
     // max whitelist supply RPC's
-    uint256 public constant whitelistSupplyLimit = 3;
+    uint256 public constant WHITELIST_SUPPLY_LIMIT = 3;
     // max mints per whitelisted address
-    uint256 public constant maxWhitelistMintAmount = 1;
+    uint256 public constant MAX_WHITELIST_MINT_AMOUNT = 1;
     // max public sale mints per address
-    uint256 public constant maxPublicSaleMintAmount = 3;
+    uint256 public constant MAX_PUBLIC_SALE_MINT_AMOUNT = 3;
 
     // otherwise, you declare state variables here but initialize them in the initialize method
 
@@ -192,7 +192,7 @@ contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, Pau
     // gets the next token id to mint
     function _getNextTokenId() private returns (uint256) {
         // we start at the current nextTokenId
-        for (uint256 i = _nextTokenId; i <= supplyLimit; i++) {
+        for (uint256 i = _nextTokenId; i <= SUPPLY_LIMIT; i++) {
             // this begins token IDs at 1
             _nextTokenId++;
             // inject solidity
@@ -279,9 +279,9 @@ contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, Pau
 
     {
         require(numberOfTokens > 0, "You must mint at least one NFT.");
-        require(supply + numberOfTokens <= whitelistSupplyLimit, "Purchase would exceed max supply.");
+        require(supply + numberOfTokens <= WHITELIST_SUPPLY_LIMIT, "Purchase would exceed max supply.");
         require(
-            whitelistAddressMintedAmount[msg.sender] + numberOfTokens <= maxWhitelistMintAmount,
+            whitelistAddressMintedAmount[msg.sender] + numberOfTokens <= MAX_WHITELIST_MINT_AMOUNT,
             "You may mint up to 1 NFT."
         );
 
@@ -310,10 +310,10 @@ contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, Pau
     function publicMint(uint8 numberOfTokens) public payable _requirePublicSaleState {
         require(numberOfTokens > 0, "You must mint at least one NFT for public sale.");
         // remove the whitelist max supply from the public supply
-        // require(supply + numberOfTokens <= (supplyLimit - whitelistSupplyLimit), "Purchase would exceed max supply.");
-        require(supply + numberOfTokens <= supplyLimit, "Purchase would exceed max supply.");
+        // require(supply + numberOfTokens <= (SUPPLY_LIMIT - WHITELIST_SUPPLY_LIMIT), "Purchase would exceed max supply.");
+        require(supply + numberOfTokens <= SUPPLY_LIMIT, "Purchase would exceed max supply.");
         require(
-            publicSaleAddressMintedAmount[msg.sender] + numberOfTokens <= maxPublicSaleMintAmount,
+            publicSaleAddressMintedAmount[msg.sender] + numberOfTokens <= MAX_PUBLIC_SALE_MINT_AMOUNT,
             "You may mint up to 3 NFTs on the public list sale."
         );
 

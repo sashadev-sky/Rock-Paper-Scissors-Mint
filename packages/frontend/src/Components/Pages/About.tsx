@@ -1,4 +1,5 @@
 import {
+  Breakpoint,
   Card,
   Link,
   Stack,
@@ -11,8 +12,8 @@ import Bullet from '../Presentational/Bullet';
 import Main from '../Styled/Main';
 
 const About = () => {
-  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile'));
-  const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile'));
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile' as Breakpoint));
+  const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile' as Breakpoint));
   const isMobileBreakpoint = isMobile || isTinyMobile;
 
   return (

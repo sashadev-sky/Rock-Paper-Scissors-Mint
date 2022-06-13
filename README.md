@@ -1,10 +1,27 @@
-# Rock Paper Scissors Dapp
+# 🪨 Rock Paper Scissors ✂️ Mint
+
+A Dapp for minting Rock, Paper and Scissors NFTs.
+
+The tokens are **ERC1155** compliant, off-chain data on a **decentralized storage** service layered with **IPFS**.
+
+A user may mint multiple tokens at once. As long as there is a supply remaining, they can mint up to a pre-determined amount of tokens.
+
+## Features
+
+- Tokens are **burnable**, **mintable**, and **transferable**. With **Access Control**, these actions are **pausable**.
+
+- With Access Control, the contract is **upgradeable**, and supports 3 phases (Whitelist, Public, Closed) with different pricing and mint and supply limits.
+
+- A user can connect with 5 wallet providers: **MetaMask**, **Rainbow**, **Coinbase Wallet**, **WalletConnect**, and **Trust Wallet** and mint on mobile or desktop.
+
+- A user receives a **notification** when the transaction goes through (or fails).
+
+- When the user **connects**, they can access their profile to see their **recent transactions**, connected wallet address, and to manually **disconnect**.
 
 ## Components
 
-### Technologies
-
-#### Development Tools
+<ol>
+<details><summary><b>🦾 Development Tools</b></summary>
 
 - **Yarn** - package manager
   - This project uses [Yarn Workspaces](https://yarnpkg.com/en/docs/workspaces/)
@@ -14,7 +31,11 @@
 - **Git** - version control
 - **CRA** - create react app
 
-#### Ethereum
+</details>
+
+<br>
+
+<details><summary><b>Ethereum</b></summary>
 
 - **Solidity** (v.0.8.10) - implementing smart contracts
 - **[HardHat](https://hardhat.org/)** - Ethereum development environment
@@ -34,20 +55,29 @@ Decentralized storage
 - **[NFT.Storage](https://nft.storage/)**
 - **IPFS (InterPlanetary File System)**
 
-#### Frontend
+</details>
+
+<br>
+
+<details><summary><b>Frontend</b></summary>
 
 - **React** - JavaScript framework
-
-  - **RainbowKit**
-  - **Wagmi**
+  - **RainbowKit** - Ethereum wallet integration
+  - **Wagmi** - Ethereum hooks
   - **Material UI** - UI framework
-  - **React Router**
+  - **React Router** - Client side routing
 
-# 🏄‍♂️ Quick Start
+</details>
+
+---
+
+## 🏄‍♂️ Quick Start
 
 Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://yarnpkg.com/getting-started/install).
 
-## Hardhat
+## 👷 Hardhat
+
+> The `hardhat` workspace is used to compile and deploy smart contracts.
 
 Create a `.env` file in the `hardhat` folder and add the following variables:
 
@@ -234,6 +264,8 @@ yarn hardhat
 ```
 
 ## Frontend
+
+> The `frontend` workspace is used to create the interface for our contract with "Ethereum components" (ConnectButton, WalletAddress, etc.) and read and write to it via hooks.
 
 1. Install development dependencies to customize `react-scripts`
 

@@ -24,6 +24,7 @@ import {
   useNetwork,
   useProvider,
   useSigner,
+  useWebSocketProvider,
 } from 'wagmi';
 
 import { PHASE, CHAIN_ID, CONTRACT_PARAMS, GAS_LIMIT } from '../../constants';
@@ -67,6 +68,12 @@ const Home = () => {
   });
   const chainId = activeChain?.id;
   let walletAddress = user?.address || '';
+
+  const { data: paused } = useContractRead(CONTRACT_PARAMS, 'paused', {
+    chainId: CHAIN_ID,
+    enabled: !!contract,
+    watch: true,
+  }) as any;
 
   const { data: phase } = useContractRead(CONTRACT_PARAMS, 'saleState', {
     chainId: CHAIN_ID,
@@ -156,7 +163,7 @@ const Home = () => {
     isLoading: isMintLoading,
     isSuccess: isMintStarted,
     reset: resetMintState,
-  } = useContractWrite(CONTRACT_PARAMS, 'publicMint', {
+  } = useContractWrite(CONTRACT_PARAMS, "publicMint", {
     args: [counter],
     overrides: {
       from: walletAddress,
@@ -174,7 +181,10 @@ const Home = () => {
       hash: transactionHash,
     });
 
+    console.log('event', event);
+
     const receipt = await getTransactionReceipt();
+    console.log("receipt", receipt);
 
     if (receipt.status === 1) {
       setSnackbarOpen(true);
@@ -310,13 +320,14 @@ const Home = () => {
                       {contract && (
                         <Phase
                           isSoldOut={isSoldOut(nftsRemaining, nftsMinted)}
+                          paused={!!paused}
                           phase={phase}
                         />
                       )}
                     </CardContent>
                     <CardActions>
                       <Stack>
-                        {phase !== PHASE.PHASE_CLOSED && (
+                        {phase !== PHASE.PHASE_CLOSED && !paused && (
                           isConnected || isReconnecting ? (
                             <>
                               <BoxCounter
@@ -380,7 +391,7 @@ const Home = () => {
                       unmountOnExit
                       timeout={1000}
                     >
-                      <MintStatus status={status} />
+                      {!paused && <MintStatus status={status} />}
                     </Collapse>
                   </StackOverImage>
                 </div>

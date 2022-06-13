@@ -1,5 +1,5 @@
 import { LoadingButton } from '@mui/lab';
-import { Stack, Theme, useMediaQuery } from '@mui/material';
+import { Breakpoint, Stack, Theme, useMediaQuery } from '@mui/material';
 
 import ErrorText from '../Styled/ErrorText';
 
@@ -18,8 +18,8 @@ const MintButton = ({
   onClick,
   shouldDisableMintButton = () => false,
 }: Props) => {
-  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile'));
-  const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile'));
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile' as Breakpoint));
+  const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile' as Breakpoint));
   const mobileBreakpoint = isMobile || isTinyMobile;
   const disabled = shouldDisableMintButton();
 
