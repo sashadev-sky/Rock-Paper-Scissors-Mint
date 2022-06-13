@@ -7189,7 +7189,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bl@npm:~1.2.3":
+"bl@npm:1.2.3":
   version: 0.8.2
   resolution: "bl@npm:1.2.3"
   dependencies:
@@ -15329,7 +15329,7 @@ __metadata:
   version: 0.18.6
   resolution: "levelup@npm:0.18.6"
   dependencies:
-    bl: ~1.2.3
+    bl: 1.2.3
     deferred-leveldown: ~0.2.0
     errno: ~0.1.1
     prr: ~0.0.0
