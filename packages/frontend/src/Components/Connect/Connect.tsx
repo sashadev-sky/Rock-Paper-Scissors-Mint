@@ -7,7 +7,7 @@ import {
   Theme,
   useMediaQuery
 } from '@mui/material';
-import { ConnectButton } from '@sboginsky17/rainbowkit';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 import { isCorrectChainId } from '../../utils/ethereum';
 import WalletIcon from '../Icons/WalletIcon';

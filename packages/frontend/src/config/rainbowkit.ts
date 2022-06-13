@@ -1,6 +1,6 @@
-import '@sboginsky17/rainbowkit/styles.css';
+import '@rainbow-me/rainbowkit/styles.css';
 
-import { connectorsForWallets, lightTheme, wallet } from '@sboginsky17/rainbowkit';
+import { connectorsForWallets, lightTheme, wallet } from '@rainbow-me/rainbowkit';
 import { chain, configureChains, createClient } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { infuraProvider } from 'wagmi/providers/infura';
@@ -11,7 +11,7 @@ import { APP_NAME, CHAIN_ID, CHAIN_IDS } from '../constants';
 import { needsInjectedWalletFallback } from '../utils/wallet';
 
 export const { chains, provider, webSocketProvider } = configureChains(
-  CHAIN_ID === 4 ? [chain.rinkeby] : [chain.mainnet],
+  CHAIN_ID === 4 ? [chain.rinkeby, chain.mainnet] : [chain.mainnet],
   [
     alchemyProvider({ alchemyId: CHAIN_IDS[CHAIN_ID]?.alchemyId }),
     infuraProvider({ infuraId: process.env.REACT_APP_INFURA_ID }),
@@ -26,15 +26,13 @@ export const { chains, provider, webSocketProvider } = configureChains(
 
 const connectors = connectorsForWallets([
   {
-    groupName: 'Recommended',
-    wallets: [
-      wallet.metaMask({ chains, shimDisconnect: true }),
-      wallet.rainbow({ chains }),
-    ],
+    groupName: "Recommended",
+    wallets: [wallet.metaMask({ chains, shimDisconnect: true })],
   },
   {
-    groupName: 'Others',
+    groupName: "Others",
     wallets: [
+      wallet.rainbow({ chains }),
       wallet.coinbase({ appName: APP_NAME, chains }),
       wallet.walletConnect({ chains }),
       wallet.trust({ chains }),

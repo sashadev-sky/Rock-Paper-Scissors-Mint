@@ -12,7 +12,7 @@ import {
   Stack,
   useTheme
 } from '@mui/material';
-import { useAddRecentTransaction } from '@sboginsky17/rainbowkit';
+import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { ethers } from 'ethers';
 import {
   useAccount,

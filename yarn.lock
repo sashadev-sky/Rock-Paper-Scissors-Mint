@@ -3353,6 +3353,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rainbow-me/rainbowkit@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "@rainbow-me/rainbowkit@npm:0.2.4"
+  dependencies:
+    "@vanilla-extract/css": 1.7.0
+    "@vanilla-extract/dynamic": 2.0.2
+    "@vanilla-extract/sprinkles": 1.4.1
+    clsx: 1.1.1
+    qrcode: 1.5.0
+    react-remove-scroll: 2.5.3
+  peerDependencies:
+    ethers: ">=5.5.1"
+    react: ">=17"
+    react-dom: ">=17"
+    wagmi: ^0.4.2
+  checksum: 9a6074b5a3b949fd4dec412d1319f12fb50f5d120646276dce18363d79950d7a48141f963af4b3afaeee8194484d4e6f7e93371318c019df3b19b93e1c25f305
+  languageName: node
+  linkType: hard
+
 "@react-spring/animated@npm:~9.4.5":
   version: 9.4.5
   resolution: "@react-spring/animated@npm:9.4.5"
@@ -3527,25 +3546,6 @@ __metadata:
   version: 1.1.3
   resolution: "@rushstack/eslint-patch@npm:1.1.3"
   checksum: 53752d1e34e45a91b30a016b837c33054fcbd0a295c0312b0812dab78289ea680d7c0c3f19c1f885f49764d416727747133765ff5bfce31a9c4cc93c7a56ebe1
-  languageName: node
-  linkType: hard
-
-"@sboginsky17/rainbowkit@npm:^0.3.3":
-  version: 0.3.3
-  resolution: "@sboginsky17/rainbowkit@npm:0.3.3"
-  dependencies:
-    "@vanilla-extract/css": 1.7.0
-    "@vanilla-extract/dynamic": 2.0.2
-    "@vanilla-extract/sprinkles": 1.4.1
-    clsx: 1.1.1
-    qrcode: 1.5.0
-    react-remove-scroll: 2.5.3
-  peerDependencies:
-    ethers: ">=5.5.1"
-    react: ">=17"
-    react-dom: ">=17"
-    wagmi: ^0.4.2
-  checksum: 4e4278130fd05b05e6994b2f980f301a94d8f92c40bbda87c2af878beac164652846b58fe3807545baf77f591b53da0b5509d3f766f3c45bc39c540a75dce569
   languageName: node
   linkType: hard
 
@@ -19577,8 +19577,8 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.78
     "@mui/material": ^5.6.2
     "@mui/utils": ^5.8.0
+    "@rainbow-me/rainbowkit": ^0.2.4
     "@react-spring/web": ^9.4.5
-    "@sboginsky17/rainbowkit": ^0.3.3
     "@testing-library/dom": ^8.13.0
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
@@ -23640,7 +23640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:16.2.0, yargs@npm:^13.2.4, yargs@npm:^15.3.1, yargs@npm:^16.2.0, yargs@npm:^4.7.1":
+"yargs@npm:16.2.0, yargs@npm:^13.2.4, yargs@npm:^16.2.0, yargs@npm:^4.7.1":
   version: 15.4.1
   resolution: "yargs@npm:16.2.0"
   dependencies:
@@ -23656,6 +23656,25 @@ __metadata:
     y18n: ^4.0.0
     yargs-parser: ^18.1.2
   checksum: b14afbb51e3251a204d81937c86a7e9d4bdbf9a2bcee38226c900d00f522969ab675703bee2a6f99f8e20103f608382936034e64d921b74df82b63c07c5e8f59
+  languageName: node
+  linkType: hard
+
+"yargs@npm:^15.3.1":
+  version: 15.4.1
+  resolution: "yargs@npm:15.4.1"
+  dependencies:
+    cliui: ^6.0.0
+    decamelize: ^1.2.0
+    find-up: ^4.1.0
+    get-caller-file: ^2.0.1
+    require-directory: ^2.1.1
+    require-main-filename: ^2.0.0
+    set-blocking: ^2.0.0
+    string-width: ^4.2.0
+    which-module: ^2.0.0
+    y18n: ^4.0.0
+    yargs-parser: ^18.1.2
+  checksum: 40b974f508d8aed28598087720e086ecd32a5fd3e945e95ea4457da04ee9bdb8bdd17fd91acff36dc5b7f0595a735929c514c40c402416bbb87c03f6fb782373
   languageName: node
   linkType: hard
 
