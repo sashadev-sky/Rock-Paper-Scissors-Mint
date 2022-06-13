@@ -7189,12 +7189,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bl@npm:~0.8.1":
+"bl@npm:~1.2.3":
   version: 0.8.2
-  resolution: "bl@npm:0.8.2"
+  resolution: "bl@npm:1.2.3"
   dependencies:
     readable-stream: ~1.0.26
-  checksum: 18767c5c861ae1cdbb000bb346e9e8e29137225e8eef97f39db78beeb236beca609f465580c5c1b177d621505f57400834fb4a17a66d264f33a0237293ec2ac5
+  checksum: 123f097989ce2fa9087ce761cd41176aaaec864e28f7dfe5c7dab8ae16d66d9844f849c3ad688eb357e3c5e4f49b573e3c0780bb8bc937206735a3b6f8569a5f
   languageName: node
   linkType: hard
 
@@ -15329,7 +15329,7 @@ __metadata:
   version: 0.18.6
   resolution: "levelup@npm:0.18.6"
   dependencies:
-    bl: ~0.8.1
+    bl: ~1.2.3
     deferred-leveldown: ~0.2.0
     errno: ~0.1.1
     prr: ~0.0.0
