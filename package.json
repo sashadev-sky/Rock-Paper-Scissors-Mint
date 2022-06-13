@@ -25,6 +25,7 @@
     "deploy:mainnet": "yarn workspace rps-hardhat deploy:mainnet",
     "hardhat": "yarn workspace rps-hardhat hardhat",
     "test:hardhat": "yarn workspace rps-hardhat test",
+    "lint:hardhat": "yarn workspace rps-hardhat lint",
     "build": "yarn workspace rps-frontend build",
     "start": "yarn workspace rps-frontend start",
     "test:client": "yarn workspace rps-frontend test",

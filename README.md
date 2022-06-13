@@ -255,7 +255,9 @@ See [How to Create and Deploy an ERC1155 NFT](./docs/how_to_create_an_ERC1155_nf
 
     ![Implementation Contract Verification](./docs/images/implementation_contract.png)
 
-## Tasks
+## Commands
+
+### Tasks
 
 To see a list of all tasks available:
 
@@ -263,12 +265,30 @@ To see a list of all tasks available:
 yarn hardhat
 ```
 
-## Linting
+### Linting
 
 To run the Solidity linter:
 
 ```bash
-yarn workspace rps-hardhat lint
+yarn lint:hardhat
+```
+
+### Compile contracts and generate Typechain typings
+
+```bash
+yarn compile
+```
+
+### Run contract tests
+
+```bash
+yarn test:hardhat
+```
+
+### Deploy to Ethereum
+
+```bash
+yarn deploy --network <network_name>
 ```
 
 ## Frontend
