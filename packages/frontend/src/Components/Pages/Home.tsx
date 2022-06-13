@@ -24,7 +24,6 @@ import {
   useNetwork,
   useProvider,
   useSigner,
-  useWebSocketProvider,
 } from 'wagmi';
 
 import { PHASE, CHAIN_ID, CONTRACT_PARAMS, GAS_LIMIT } from '../../constants';
@@ -181,11 +180,7 @@ const Home = () => {
       hash: transactionHash,
     });
 
-    console.log('event', event);
-
     const receipt = await getTransactionReceipt();
-    console.log("receipt", receipt);
-
     if (receipt.status === 1) {
       setSnackbarOpen(true);
       setTimeout(() => {
