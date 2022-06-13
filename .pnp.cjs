@@ -2427,7 +2427,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "bl",\
-        "npm:1.2.3"\
+        "npm:5.0.0"\
       ],\
       [\
         "blakejs",\
@@ -17737,10 +17737,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["bl", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/cache/bl-npm-1.2.3-49c4213ca5-123f097989.zip/node_modules/bl/",\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/bl-npm-5.0.0-cd18f87fd8-5dbbcf9cbc.zip/node_modules/bl/",\
           "packageDependencies": [\
-            ["bl", "npm:1.2.3"],\
+            ["bl", "npm:5.0.0"],\
             ["readable-stream", "npm:1.0.34"]\
           ],\
           "linkType": "HARD"\
@@ -27053,7 +27053,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/levelup-npm-0.18.6-d181e19f2e-80e140dd83.zip/node_modules/levelup/",\
           "packageDependencies": [\
             ["levelup", "npm:0.18.6"],\
-            ["bl", "npm:1.2.3"],\
+            ["bl", "npm:5.0.0"],\
             ["deferred-leveldown", "npm:0.2.0"],\
             ["errno", "npm:0.1.8"],\
             ["prr", "npm:0.0.0"],\
