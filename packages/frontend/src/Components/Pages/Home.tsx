@@ -98,7 +98,7 @@ const Home = () => {
 
   const supplyLimit = +(useContractRead(
     CONTRACT_PARAMS,
-    phase === PHASE.PHASE_WHITELIST ? 'whitelistSupplyLimit' : 'supplyLimit',
+    phase === PHASE.PHASE_WHITELIST ? 'WHITELIST_SUPPLY_LIMIT' : 'SUPPLY_LIMIT',
     {
       chainId: CHAIN_ID,
       enabled: !!contract && truthyOrZero(nftsMinted),
@@ -109,7 +109,7 @@ const Home = () => {
 
   const maxAmountPerUser = +(useContractRead(
     CONTRACT_PARAMS,
-    phase === PHASE.PHASE_WHITELIST ? 'maxWhitelistMintAmount' : 'maxPublicSaleMintAmount',
+    phase === PHASE.PHASE_WHITELIST ? 'MAX_WHITELIST_MINT_AMOUNT' : 'MAX_PUBLIC_SALE_MINT_AMOUNT',
     {
       chainId: CHAIN_ID,
       enabled: !!(contract && phase && [PHASE.PHASE_PUBLIC, PHASE.PHASE_WHITELIST].includes(phase)),
