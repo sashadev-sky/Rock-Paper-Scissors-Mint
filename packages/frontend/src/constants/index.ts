@@ -25,7 +25,7 @@ export const GAS_LIMIT = 250000;
 export const CHAIN_IDS: { [key: number]: Chain } = {
   1: {
     name: 'homestead',
-    proxyContractAddress: process.env.REACT_APP_HOMESTEAD_PROXY_CONTRACT_ADDRESS as string, // a proxy contract never changes its address
+    proxyContractAddress: process.env.REACT_APP_HOMESTEAD_PROXY_CONTRACT_ADDtRESS as string, // a proxy contract never changes its address
     rpcUrl: `https://mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`,
     alchemyBaseUrl: 'https://eth-mainnet.alchemyapi.io/v2/',
     alchemyId: process.env.REACT_APP_ALCHEMY_PRODUCTION_KEY as string,

@@ -3,7 +3,7 @@ import createPalette from '@mui/material/styles/createPalette';
 import createTypography from '@mui/material/styles/createTypography';
 import { deepmerge } from '@mui/utils';
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface TypographyVariants {
     h1sup: React.CSSProperties;
   }
@@ -23,7 +23,7 @@ declare module "@mui/material/styles" {
 
 
 // Update the Typography's variant prop options
-declare module "@mui/material/Typography" {
+declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     h1sup: true;
   }

@@ -28,7 +28,6 @@
     "lint:hardhat": "yarn workspace rps-hardhat lint",
     "build": "yarn workspace rps-frontend build",
     "start": "yarn workspace rps-frontend start",
-    "test:client": "yarn workspace rps-frontend test:watch",
     "eject": "yarn workspace rps-frontend eject",
     "ship": "yarn workspace rps-frontend surge"
   },

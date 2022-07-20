@@ -65,6 +65,7 @@ const Home = () => {
     ...CONTRACT_PARAMS,
     signerOrProvider: signer || provider,
   });
+  (window as any).contract = contract;
   const chainId = activeChain?.id;
   let walletAddress = user?.address || '';
 
