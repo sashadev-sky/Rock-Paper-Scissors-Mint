@@ -1,5 +1,7 @@
 import RPSCollection from '../generated/artifacts/contracts/RPS.sol/RPS.json';
 
+import { AlchemySettings, Network } from 'alchemy-sdk';
+
 /**
  * SEO and Contract Related Info
  */
@@ -7,37 +9,40 @@ export const APP_NAME = 'Rock, Paper, Scissors! NFT';
 export const APP_SHORT_NAME = 'RPS';
 export const INSTAGRAM_HANDLE = 'sashaboginsky';
 export const OPENSEA_COLLECTION = 'rock-paper-and-scissors-nft';
-export const TITLE = 'RPS NFT | RockPaperScissors';
+export const TITLE = `${APP_SHORT_NAME} NFT | RockPaperScissors`;
 
 /**
  * Network Related Info
  */
 interface Chain {
+  alchemy: AlchemySettings;
   name: string;
   proxyContractAddress: string;
   rpcUrl: string;
-  alchemyBaseUrl: string;
-  alchemyId: string;
   etherScanUrl: string;
 }
-export const CHAIN_ID = 4;
+export const CHAIN_ID = 5;
 export const GAS_LIMIT = 250000;
 export const CHAIN_IDS: { [key: number]: Chain } = {
   1: {
     name: 'homestead',
     proxyContractAddress: process.env.REACT_APP_HOMESTEAD_PROXY_CONTRACT_ADDtRESS as string, // a proxy contract never changes its address
+    alchemy: {
+      apiKey: process.env.REACT_APP_ALCHEMY_PRODUCTION_KEY as string,
+      network: Network.ETH_MAINNET,
+    },
     rpcUrl: `https://mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`,
-    alchemyBaseUrl: 'https://eth-mainnet.alchemyapi.io/v2/',
-    alchemyId: process.env.REACT_APP_ALCHEMY_PRODUCTION_KEY as string,
     etherScanUrl: 'https://etherscan.io',
   },
-  4: {
-    name: 'rinkeby',
-    alchemyId: process.env.REACT_APP_ALCHEMY_STAGING_KEY as string,
-    alchemyBaseUrl: 'https://eth-rinkeby.alchemyapi.io/v2/',
-    proxyContractAddress: process.env.REACT_APP_RINKEBY_PROXY_CONTRACT_ADDRESS as string, // a proxy contract never changes its address
-    rpcUrl: `https://rinkeby.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`,
-    etherScanUrl: 'https://rinkeby.etherscan.io',
+  5: {
+    name: 'goerli',
+    proxyContractAddress: process.env.REACT_APP_GOERLI_PROXY_CONTRACT_ADDRESS as string, // a proxy contract never changes its address
+    alchemy: {
+      apiKey: process.env.REACT_APP_ALCHEMY_STAGING_KEY as string,
+      network: Network.ETH_GOERLI,
+    },
+    rpcUrl: `https://goerli.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`,
+    etherScanUrl: 'https://goerli.etherscan.io',
   },
 };
 

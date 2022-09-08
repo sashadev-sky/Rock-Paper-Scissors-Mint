@@ -19,6 +19,8 @@ export const getUserMintingAllowanceMsg = (
   return '';
 };
 
-export const isSoldOut = (nftsRemaining: number, nftsMinted: number) => (
-  nftsRemaining === 0 && nftsMinted > 0
-);
+export const isSoldOut = (nftsRemaining: number, nftsMinted: number) =>
+  nftsRemaining === 0 && nftsMinted > 0;
+
+export const isMintablePhase = (phase: number) =>
+  [PHASE.PHASE_WHITELIST, PHASE.PHASE_PUBLIC].includes(phase);

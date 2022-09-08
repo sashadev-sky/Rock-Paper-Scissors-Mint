@@ -10,11 +10,13 @@ import 'hardhat-deploy-ethers';
 import '@typechain/hardhat';
 import '@typechain/ethers-v5';
 
+import { Network } from 'alchemy-sdk';
+
 import { findFirstAddr, prettyPrintBalance } from './utils';
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: '0.8.10',
+    version: '0.8.19',
     settings: {
       optimizer: {
         enabled: true,
@@ -29,12 +31,12 @@ const config: HardhatUserConfig = {
     localhost: {
       url: 'http://localhost:8545',
     },
-    rinkeby: {
-      url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.ALCHEMY_STAGING_KEY}`,
+    goerli: {
+      url: `https://${Network.ETH_GOERLI}.g.alchemy.com/v2/${process.env.ALCHEMY_STAGING_KEY}`,
       accounts: { mnemonic: process.env.MNEMONIC },
     },
     mainnet: {
-      url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_PRODUCTION_KEY}`,
+      url: `https://${Network.ETH_MAINNET}.g.alchemy.com/v2/${process.env.ALCHEMY_PRODUCTION_KEY}`,
       accounts: {
         mnemonic: process.env.MNEMONIC,
       },
@@ -46,8 +48,8 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      rinkeby: process.env.ETHERSCAN_STAGING_KEY || '6EAGC2DEG6PP3M1GP1I86QJPQAUE4ESW1W',
-      mainnet: process.env.ETHERSCAN_PRODUCTION_KEY || '6EAGC2DEG6PP3M1GP1I86QJPQAUE4ESW1W',
+      goerli: process.env.ETHERSCAN_STAGING_KEY || '',
+      mainnet: process.env.ETHERSCAN_PRODUCTION_KEY || '',
     },
   },
 };

@@ -1,11 +1,10 @@
 import { useCallback, useEffect } from 'react';
 import { Stack, useMediaQuery } from '@mui/material';
-import { Theme } from '@mui/material/styles';
+import { Theme, useTheme } from '@mui/material/styles';
 
 import Display from './Display';
 import ButtonDecrement from './ButtonDecrement';
 import ButtonIncrement from './ButtonIncrement';
-
 
 interface Props {
   canMintAmount: number;
@@ -14,12 +13,8 @@ interface Props {
   shouldDisableCounter: () => boolean;
 }
 
-const BoxCounter = ({
-  canMintAmount,
-  counter,
-  setCounter,
-  shouldDisableCounter,
-}: Props) => {
+const BoxCounter = ({ canMintAmount, counter, setCounter, shouldDisableCounter }: Props) => {
+  const { palette } = useTheme();
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile'));
   const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile'));
   const isMobileBreakpoint = isMobile || isTinyMobile;
@@ -50,8 +45,8 @@ const BoxCounter = ({
         alignSelf: 'center',
         border: '1px solid',
         borderStyle: 'outset',
-        color: 'primary.main',
-        px: '50px'
+        color: palette.primary.main,
+        px: '50px',
       }}
     >
       <ButtonDecrement
@@ -59,11 +54,7 @@ const BoxCounter = ({
         onClick={decrementCounter}
         mobile={isMobileBreakpoint}
       />
-      <Display
-        color='common.black'
-        message={counter}
-        mobile={isMobileBreakpoint}
-      />
+      <Display color={palette.common.black} message={counter} mobile={isMobileBreakpoint} />
       <ButtonIncrement
         disabled={incrementDisabled}
         onClick={incrementCounter}

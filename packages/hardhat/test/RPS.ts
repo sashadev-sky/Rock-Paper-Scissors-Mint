@@ -1,12 +1,11 @@
-import { Contract } from 'ethers';
+import { Contract, ContractFactory } from 'ethers';
 import { ethers } from 'hardhat';
 
 import { expect } from './chai-setup';
 
-let RPS;
+let RPS: ContractFactory;
 let rps: Contract;
 
-// Start test block
 describe('RPC', () => {
   beforeEach(async () => {
     RPS = await ethers.getContractFactory('RPS');
@@ -43,12 +42,3 @@ describe('RPC', () => {
     expect(await rps.balanceOf(account2.address, 2)).to.equal(3);
   });
 });
-
-
-// describe('RPS', () => {
-//   it('deploys', async function () {
-//     await deployments.fixture(['RPS']);
-//     const RPS = await deployments.get('RPS'); // RPS is available because the fixture was executed
-//     expect(RPS.address).to.exist;
-//   });
-// });

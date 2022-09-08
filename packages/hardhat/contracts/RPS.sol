@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
@@ -14,6 +14,7 @@ import "@openzeppelin/contracts-upgradeable/utils/cryptography/ECDSAUpgradeable.
 
 /**
  * @title RPS
+ * @author sashadev-sky
  */
 contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, PausableUpgradeable, ERC1155BurnableUpgradeable, ERC1155SupplyUpgradeable {
     // for whitelist server signatures
@@ -52,9 +53,9 @@ contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, Pau
     uint256 public supply;
 
     // number of mints per address for whitelist
-    mapping(address => uint8) whitelistAddressMintedAmount;
+    mapping(address => uint8) public whitelistAddressMintedAmount;
     // number of mints per address for public sale
-    mapping(address => uint8) publicSaleAddressMintedAmount;
+    mapping(address => uint8) public publicSaleAddressMintedAmount;
 
     // token IDs that have already been minted
     mapping(uint256 => bool) private mintedTokenIds;
@@ -279,7 +280,7 @@ contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, Pau
 
     {
         require(numberOfTokens > 0, "You must mint at least one NFT.");
-        require(supply + numberOfTokens <= WHITELIST_SUPPLY_LIMIT, "Purchase would exceed max supply.");
+        require(supply + numberOfTokens <= WHITELIST_SUPPLY_LIMIT, "Purchase exceeds max supply.");
         require(
             whitelistAddressMintedAmount[msg.sender] + numberOfTokens <= MAX_WHITELIST_MINT_AMOUNT,
             "You may mint up to 1 NFT."
@@ -308,13 +309,13 @@ contract RPS is Initializable, ERC1155Upgradeable, AccessControlUpgradeable, Pau
 
     // public
     function publicMint(uint8 numberOfTokens) public payable _requirePublicSaleState {
-        require(numberOfTokens > 0, "You must mint at least one NFT for public sale.");
+        require(numberOfTokens > 0, "You must mint at least 1 NFT.");
         // remove the whitelist max supply from the public supply
-        // require(supply + numberOfTokens <= (SUPPLY_LIMIT - WHITELIST_SUPPLY_LIMIT), "Purchase would exceed max supply.");
-        require(supply + numberOfTokens <= SUPPLY_LIMIT, "Purchase would exceed max supply.");
+        // require(supply + numberOfTokens <= (SUPPLY_LIMIT - WHITELIST_SUPPLY_LIMIT), "Purchase exceeds max supply.");
+        require(supply + numberOfTokens <= SUPPLY_LIMIT, "Purchase exceeds max supply.");
         require(
             publicSaleAddressMintedAmount[msg.sender] + numberOfTokens <= MAX_PUBLIC_SALE_MINT_AMOUNT,
-            "You may mint up to 3 NFTs on the public list sale."
+            "You may mint up to 3 NFTs."
         );
 
         require(msg.value == cost * numberOfTokens, "You must pay for your NFT.");

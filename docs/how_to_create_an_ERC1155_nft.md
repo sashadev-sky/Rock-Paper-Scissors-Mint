@@ -1,6 +1,6 @@
 # How to Create and Deploy an ERC1155 NFT
 
-1. Head over to the OpenZeppelin contract wizard and fill out the generator for ERC1155. (See **Configuration** in [OpenZeppelin `ERC1155` Notes](./oz_erc1155.md))
+Head over to the OpenZeppelin contract wizard and fill out the generator for ERC1155. (See **Configuration** in [OpenZeppelin `ERC1155` Notes](./oz_erc1155.md))
 
 ## Compatibility with OpenSea
 
@@ -21,20 +21,19 @@ When hitting `uri` you will get a uri in the same format as the output shown bel
 2. Override the URI function by creating a custom URI function and converting token from integer to string, then returning the complete URI.
 <br>
 
-    ```go
-    // contracts/RPS.sol
-
-    import "@openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol";
-    //...
-    function uri(uint256 _tokenid) override public pure returns (string memory) {
-        return string(
+   ```solidity
+   // contracts/RPS.sol
+   import "@openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol";
+   //...
+   function uri(uint256 _tokenid) override public pure returns (string memory) {
+       return string(
             abi.encodePacked(
                 "https://ipfs.io/ipfs/bafybeicxlrrqm5l6uqtngfmdgrzzqrklu2vdqwg3dx32fcqpffh7qyryju/",
                 StringsUpgradeable.toString(_tokenid),".json"
             )
         );
     }
-    ```
+   ```
 
 3. Compile and Deploy
 

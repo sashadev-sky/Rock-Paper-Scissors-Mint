@@ -1,5 +1,5 @@
-import { Theme, useMediaQuery } from '@mui/material';
-import SecondaryText from "../../Styled/SecondaryText";
+import { Container, Theme, useMediaQuery } from '@mui/material';
+import SecondaryText from '../../Styled/SecondaryText';
 
 interface Props {
   status: string;
@@ -11,16 +11,19 @@ const MintStatus = ({ status }: Props) => {
   const mob = isMobile || isTinyMobile;
 
   return (
-    <SecondaryText
-      className='trade-gothic'
-      sx={{
-        textAlign: 'center',
-        fontSize: mob ? '0.65rem' : '1rem',
-      }}
-      variant='caption'
-    >
-      {status}
-    </SecondaryText>
+    <Container sx={{ pb: 2 }}>
+      <SecondaryText
+        className='trade-gothic'
+        sx={{
+          textAlign: 'center',
+          fontSize: mob ? '0.65rem' : '1rem',
+          mb: 2,
+        }}
+        variant='caption'
+      >
+        {status}
+      </SecondaryText>
+    </Container>
   );
 };
 

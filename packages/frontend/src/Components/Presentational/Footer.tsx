@@ -1,15 +1,9 @@
 import { Grid, Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
-import {
-  CHAIN_ID,
-  CHAIN_IDS,
-  INSTAGRAM_HANDLE,
-  OPENSEA_COLLECTION
-} from '../../constants';
+import { CHAIN_ID, CHAIN_IDS, INSTAGRAM_HANDLE } from '../../constants';
 import EtherScanIcon from '../Icons/EtherScanIcon';
 import InstagramIcon from '../Icons/InstagramIcon';
-import OpenSeaIcon from '../Icons/OpenSeaIcon';
 
 interface Props {
   chainId: number | undefined;
@@ -28,16 +22,7 @@ const Footer = ({ chainId = CHAIN_ID }: Props) => (
       zIndex={1}
       spacing={4}
     >
-      <Grid item>
-        <Link
-          target='_blank'
-          href={`https://testnets.opensea.io/collection/${OPENSEA_COLLECTION}`}
-          rel='noopener noreferrer'
-        >
-          <OpenSeaIcon />
-        </Link>
-      </Grid>
-      <Grid item>
+      <Grid item ml={-2}>
         <Link
           target='_blank'
           href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`}
@@ -46,7 +31,7 @@ const Footer = ({ chainId = CHAIN_ID }: Props) => (
           <InstagramIcon />
         </Link>
       </Grid>
-      <Grid item>
+      <Grid item ml={-1}>
         <Link
           target='_blank'
           href={`${CHAIN_IDS[chainId]?.etherScanUrl}/address/${CHAIN_IDS[chainId]?.proxyContractAddress}`}
@@ -55,32 +40,17 @@ const Footer = ({ chainId = CHAIN_ID }: Props) => (
           <EtherScanIcon />
         </Link>
       </Grid>
-      <Grid
-        container
-        justifyContent='center'
-        mb={4}
-      >
-        <Grid
-          item
-          mx={2}
-        >
+      <Grid container justifyContent='center' mb={4}>
+        <Grid item mx={2}>
           <RouterLink to='/'>
-            <Typography
-              color='text.primary'
-              variant='h6'
-              component='h6'
-            >
+            <Typography color='text.primary' variant='h6' component='h6'>
               Home
             </Typography>
           </RouterLink>
         </Grid>
         <Grid item>
           <RouterLink to='/about'>
-            <Typography
-              color='text.primary'
-              variant='h6'
-              component='h6'
-            >
+            <Typography color='text.primary' variant='h6' component='h6'>
               About
             </Typography>
           </RouterLink>

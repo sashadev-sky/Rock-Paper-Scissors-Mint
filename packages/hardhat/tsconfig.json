@@ -10,8 +10,9 @@
         "outDir": "dist"
     },
     "include": [
-        "./hardhat.config.ts",
+        "./constants",
         "./deploy",
+        "./hardhat.config.ts",
         "./test",
         "./typechain",
         "./utils"

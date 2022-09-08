@@ -1,16 +1,13 @@
-
 import { useCallback, useEffect, useState } from 'react';
 import {
   Card,
   CardActions,
   CardContent,
-  CardMedia,
   Collapse,
   Grid,
   LinearProgress,
-  Paper,
   Stack,
-  useTheme
+  useTheme,
 } from '@mui/material';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { ethers } from 'ethers';
@@ -28,7 +25,7 @@ import {
 
 import { PHASE, CHAIN_ID, CONTRACT_PARAMS, GAS_LIMIT } from '../../constants';
 import { truthyOrZero } from '../../utils';
-import { getUserMintingAllowanceMsg, isSoldOut } from "../../utils/contract";
+import { getUserMintingAllowanceMsg, isMintablePhase, isSoldOut } from '../../utils/contract';
 import { isCorrectChainId } from '../../utils/ethereum';
 import Connect from '../Connect/Connect';
 import MintStats from '../Presentational/Contract/MintStats';
@@ -36,22 +33,17 @@ import Phase from '../Presentational/Contract/Phase';
 import BoxCounter from '../Presentational/Counter/BoxCounter';
 import Header from '../Presentational/Header';
 import MintButton from '../Presentational/MintButton';
-import Notify from '../Presentational/Notify';
+import Notify, { Severity } from '../Presentational/Notify';
+import NftGallery from '../Presentational/Nft/NftGallery';
 import SubHeader from '../Presentational/SubHeader';
 import MintStatus from '../Presentational/User/MintStatsus';
 import Main from '../Styled/Main';
-import StackOverImage from '../Styled/StackOverImage';
 
 const Home = () => {
   const theme = useTheme();
   const provider = useProvider({ chainId: CHAIN_ID });
   const { data: user } = useAccount();
-  const {
-    activeConnector,
-    isConnected,
-    isConnecting,
-    isReconnecting,
-  } = useConnect();
+  const { activeConnector, isConnected, isConnecting, isReconnecting } = useConnect();
   const { data: signer } = useSigner();
   const { activeChain } = useNetwork({ chainId: CHAIN_ID });
   /**
@@ -81,51 +73,55 @@ const Home = () => {
     watch: true,
   }) as any;
 
-  const cost = +ethers.utils.formatEther(useContractRead(CONTRACT_PARAMS, 'cost', {
-    chainId: CHAIN_ID,
-    enabled: !!contract,
-  }).data as any || 0);
+  const cost = +ethers.utils.formatEther(
+    (useContractRead(CONTRACT_PARAMS, 'cost', {
+      chainId: CHAIN_ID,
+      enabled: !!contract,
+    }).data as any) || 0
+  );
 
   const { data: nftsMintedUnparsed, refetch: refetchMintedCount } = useContractRead(
     CONTRACT_PARAMS,
     'supply',
     {
       chainId: CHAIN_ID,
-      enabled: !!contract
+      enabled: !!contract,
     }
   );
 
   const nftsMinted = nftsMintedUnparsed ? +nftsMintedUnparsed : -1;
 
-  const supplyLimit = +(useContractRead(
-    CONTRACT_PARAMS,
-    phase === PHASE.PHASE_WHITELIST ? 'WHITELIST_SUPPLY_LIMIT' : 'SUPPLY_LIMIT',
-    {
-      chainId: CHAIN_ID,
-      enabled: !!contract && truthyOrZero(nftsMinted),
-    }
-  ) as any).data || 0;
+  const supplyLimit =
+    +(
+      useContractRead(
+        CONTRACT_PARAMS,
+        phase === PHASE.PHASE_WHITELIST ? 'WHITELIST_SUPPLY_LIMIT' : 'SUPPLY_LIMIT',
+        {
+          chainId: CHAIN_ID,
+          enabled: !!contract && truthyOrZero(nftsMinted),
+        }
+      ) as any
+    ).data || 0;
 
   const nftsRemaining = supplyLimit ? supplyLimit - nftsMinted : -1;
 
-  const maxAmountPerUser = +(useContractRead(
-    CONTRACT_PARAMS,
-    phase === PHASE.PHASE_WHITELIST ? 'MAX_WHITELIST_MINT_AMOUNT' : 'MAX_PUBLIC_SALE_MINT_AMOUNT',
-    {
-      chainId: CHAIN_ID,
-      enabled: !!(contract && phase && [PHASE.PHASE_PUBLIC, PHASE.PHASE_WHITELIST].includes(phase)),
-    }
-  ).data as any || 0);
+  const maxAmountPerUser = +(
+    (useContractRead(
+      CONTRACT_PARAMS,
+      phase === PHASE.PHASE_WHITELIST ? 'MAX_WHITELIST_MINT_AMOUNT' : 'MAX_PUBLIC_SALE_MINT_AMOUNT',
+      {
+        chainId: CHAIN_ID,
+        enabled: !!(contract && phase && isMintablePhase(phase)),
+      }
+    ).data as any) || 0
+  );
 
-  const {
-    data: userMintedAmount,
-    refetch: refetchUserMintedAmount,
-  } = useContractRead(
+  const { data: userMintedAmount, refetch: refetchUserMintedAmount } = useContractRead(
     CONTRACT_PARAMS,
     phase === PHASE.PHASE_WHITELIST ? 'whitelistMintedByAddress' : 'publicMintedByAddress',
     {
       chainId: CHAIN_ID,
-      enabled: !!(walletAddress && phase && [PHASE.PHASE_PUBLIC, PHASE.PHASE_WHITELIST].includes(phase) && isConnected),
+      enabled: !!(walletAddress && phase && isMintablePhase(phase) && isConnected),
       overrides: { from: walletAddress },
     }
   ) as any;
@@ -144,16 +140,22 @@ const Home = () => {
    * TODO - listen for coinbase chain changed event
    */
   useEffect(() => {
-    if (!activeConnector) { return; }
+    if (!activeConnector) {
+      return;
+    }
 
     let provider: any;
     activeConnector?.getProvider?.().then((provider_) => {
       provider = provider_;
-      provider.on('disconnect', () => { window.location.reload(); });
+      provider.on('disconnect', () => {
+        window.location.reload();
+      });
     });
 
     return () => {
-      provider?.removeListener('disconnect', () => { window.location.reload(); });
+      provider?.removeListener('disconnect', () => {
+        window.location.reload();
+      });
     };
   }, [activeConnector]);
 
@@ -163,7 +165,7 @@ const Home = () => {
     isLoading: isMintLoading,
     isSuccess: isMintStarted,
     reset: resetMintState,
-  } = useContractWrite(CONTRACT_PARAMS, "publicMint", {
+  } = useContractWrite(CONTRACT_PARAMS, 'publicMint', {
     args: [counter],
     overrides: {
       from: walletAddress,
@@ -205,7 +207,9 @@ const Home = () => {
 
   // TODO dont let user mint if remaining in contract is 0
   const web3GetUserSaleState = useCallback(async () => {
-    if (!phase) { return; }
+    if (!phase) {
+      return;
+    }
     try {
       if (truthyOrZero(userMintedAmount) && maxAmountPerUser) {
         setCanMintAmount(Math.min(maxAmountPerUser - userMintedAmount, nftsRemaining));
@@ -216,7 +220,7 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       await web3GetUserSaleState();
-    })()
+    })();
   }, [web3GetUserSaleState]);
 
   useEffect(() => {
@@ -224,7 +228,7 @@ const Home = () => {
       if (phase === PHASE.PHASE_CLOSED) {
         setStatus('');
         return;
-      } else if (![PHASE.PHASE_PUBLIC, PHASE.PHASE_WHITELIST].includes(phase)) {
+      } else if (!isMintablePhase(phase)) {
         setStatus('The minting is in an unknown state.');
         return;
       } else {
@@ -239,28 +243,41 @@ const Home = () => {
   }, [cost, counter]);
 
   const web3PerformPublicMint = useCallback(() => {
-    if (!(walletAddress || isConnected || contract || canMintAmount > 0 || isCorrectChainId(chainId))) {
+    if (
+      !(walletAddress || isConnected || contract || canMintAmount > 0 || isCorrectChainId(chainId))
+    ) {
       return;
     }
 
     mint();
   }, [canMintAmount, chainId, contract, isConnected, mint, walletAddress]);
 
-  const shouldDisableMintButton = useCallback(() => (
-    !(isCorrectChainId(chainId) || [PHASE.PHASE_PUBLIC, PHASE.PHASE_WHITELIST].includes(phase)) ||
-    isSoldOut(nftsRemaining, nftsMinted) ||
-    canMintAmount <= 0
-  ), [chainId, phase, nftsRemaining, nftsMinted, canMintAmount]);
+  const shouldDisableMintButton = useCallback(
+    () =>
+      !isCorrectChainId(chainId) ||
+      !isMintablePhase(phase) ||
+      isSoldOut(nftsRemaining, nftsMinted) ||
+      canMintAmount <= 0,
+    [chainId, phase, nftsRemaining, nftsMinted, canMintAmount]
+  );
 
-  const shouldDisableCounter = useCallback(() => (
-    !walletAddress ||
-    ![PHASE.PHASE_PUBLIC, PHASE.PHASE_WHITELIST].includes(phase) ||
-    nftsRemaining <= 1 ||
-    canMintAmount <= 1 ||
-    isMintLoading ||
-    isMintStarted ||
-    shouldDisableMintButton()
-  ), [canMintAmount, isMintLoading, isMintStarted, nftsRemaining, phase, shouldDisableMintButton, walletAddress]);
+  const shouldDisableCounter = useCallback(
+    () =>
+      !walletAddress ||
+      nftsRemaining <= 1 ||
+      canMintAmount <= 1 ||
+      isMintLoading ||
+      isMintStarted ||
+      shouldDisableMintButton(),
+    [
+      canMintAmount,
+      isMintLoading,
+      isMintStarted,
+      nftsRemaining,
+      shouldDisableMintButton,
+      walletAddress,
+    ]
+  );
 
   return (
     <div>
@@ -268,22 +285,15 @@ const Home = () => {
         <Notify
           closeSnackbar={closeSnackbar}
           error={(mintError as any)?.reason}
-          severity={(mintError as any)?.reason ? 'error' : 'success'}
+          severity={(mintError as any)?.reason ? Severity.ERROR : Severity.SUCCESS}
         />
       )}
       <Main>
         <Grid container>
-          <Grid
-            item
-            xs={12}
-          >
+          <Grid item xs={12}>
             <Header />
           </Grid>
-          <Grid
-            item
-            xs={8}
-            m={theme.spacing(0, 'auto')}
-          >
+          <Grid item xs={8} m={theme.spacing(0, 'auto')}>
             <SubHeader />
           </Grid>
         </Grid>
@@ -291,113 +301,81 @@ const Home = () => {
           <Grid
             item
             xs={11}
-            bgcolor='background.default'
+            bgcolor={theme.palette.background.default}
             m={theme.spacing(0, 'auto')}
           >
-            <Paper>
-              <Card>
-                <div style={{ position: 'relative', minHeight: '65vh' }}>
-                  <CardMedia
-                    alt='Scissors NFT'
-                    component='img'
-                    image={require('../../scissors.png')}
-                    sx={{ minHeight: '60vh' }}
-                  />
-                  <StackOverImage
-                    sx={{
-                      maxWidth: {
-                        xsmobile: '200px',
-                        tablet: '500px',
-                      },
-                      top: 10,
-                    }}
-                  >
-                    <CardContent>
-                      {contract && (
-                        <Phase
-                          isSoldOut={isSoldOut(nftsRemaining, nftsMinted)}
-                          paused={!!paused}
-                          phase={phase}
-                        />
-                      )}
-                    </CardContent>
-                    <CardActions>
-                      <Stack>
-                        {phase !== PHASE.PHASE_CLOSED && !paused && (
-                          isConnected || isReconnecting ? (
-                            <>
-                              <BoxCounter
-                                canMintAmount={canMintAmount}
-                                counter={counter}
-                                setCounter={setCounter}
-                                shouldDisableCounter={shouldDisableCounter}
-                              />
-                              <MintButton
-                                loading={isMintLoading || isMintStarted}
-                                onClick={web3PerformPublicMint}
-                                shouldDisableMintButton={shouldDisableMintButton}
-                              />
-                            </>
-                          ) : (
-                            <>
-                              <Connect
-                                buttonText={
-                                  PHASE.PHASE_CLOSED === phase ||
-                                  isSoldOut(nftsRemaining, nftsMinted)
-                                    ? 'Connect'
-                                    : 'Connect to mint'
-                                }
-                                isConnected={isConnected}
-                                isConnecting={isConnecting}
-                                rounded
-                              />
-                            </>
-                          )
-                        )}
-                      </Stack>
-                    </CardActions>
-                  </StackOverImage>
-                  <StackOverImage
-                    sx={{
-                      bottom: {
-                        xsmobile: 0,
-                        tablet: 50,
-                      },
-                      mb: 4,
-                    }}
-                  >
-                    <Collapse
-                      in={!!supplyLimit}
-                      timeout={1000}
-                    >
-                      <CardContent>
-                        {!!supplyLimit ? (
-                          <MintStats
-                            minted={nftsMinted}
-                            total={supplyLimit}
+            <Card sx={{ p: theme.spacing(2) }}>
+              <div style={{ position: 'relative' }}>
+                <CardContent>
+                  {contract && (
+                    <Phase
+                      isSoldOut={isSoldOut(nftsRemaining, nftsMinted)}
+                      paused={!!paused}
+                      phase={phase}
+                    />
+                  )}
+                </CardContent>
+                <CardActions sx={{ justifyContent: 'center' }}>
+                  <Stack>
+                    {phase !== PHASE.PHASE_CLOSED &&
+                      !paused &&
+                      (isConnected || isReconnecting ? (
+                        <>
+                          <BoxCounter
+                            canMintAmount={canMintAmount}
+                            counter={counter}
+                            setCounter={setCounter}
+                            shouldDisableCounter={shouldDisableCounter}
                           />
-                        ) : (
-                          <LinearProgress variant='query' />
-                        )}
-                      </CardContent>
-                    </Collapse>
-                    <Collapse
-                      in={!!(walletAddress && isCorrectChainId(chainId) && status)}
-                      mountOnEnter
-                      unmountOnExit
-                      timeout={1000}
-                    >
-                      {!paused && <MintStatus status={status} />}
-                    </Collapse>
-                  </StackOverImage>
-                </div>
-              </Card>
-            </Paper>
+                          <MintButton
+                            loading={isMintLoading || isMintStarted}
+                            onClick={web3PerformPublicMint}
+                            shouldDisableMintButton={shouldDisableMintButton}
+                          />
+                        </>
+                      ) : (
+                        <>
+                          <Connect
+                            buttonText={
+                              PHASE.PHASE_CLOSED === phase || isSoldOut(nftsRemaining, nftsMinted)
+                                ? 'Connect'
+                                : 'Connect to mint'
+                            }
+                            isConnected={isConnected}
+                            isConnecting={isConnecting}
+                            rounded
+                          />
+                        </>
+                      ))}
+                  </Stack>
+                </CardActions>
+                <Collapse in={!!supplyLimit} timeout={1000}>
+                  <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
+                    {!!supplyLimit ? (
+                      <MintStats minted={nftsMinted} total={supplyLimit} />
+                    ) : (
+                      <LinearProgress variant='query' />
+                    )}
+                  </CardContent>
+                </Collapse>
+                <Collapse
+                  in={!!(walletAddress && isCorrectChainId(chainId) && status)}
+                  mountOnEnter
+                  unmountOnExit
+                  timeout={1000}
+                >
+                  {!paused && <MintStatus status={status} />}
+                </Collapse>
+              </div>
+            </Card>
+            <NftGallery minted={nftsMinted} />
+            <br />
+            <br />
           </Grid>
         </Grid>
       </Main>
     </div>
   );
-}
+};
 
 export default Home;

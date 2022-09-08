@@ -6,14 +6,20 @@ import {
   Theme,
   Typography,
   useMediaQuery,
+  useTheme,
 } from '@mui/material';
 
 import Bullet from '../Presentational/Bullet';
 import Main from '../Styled/Main';
 
 const About = () => {
+  const {
+    palette: { common, secondary, text },
+  } = useTheme();
   const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('mobile' as Breakpoint));
-  const isTinyMobile = useMediaQuery((theme: Theme) => theme.breakpoints.only('xsmobile' as Breakpoint));
+  const isTinyMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.only('xsmobile' as Breakpoint)
+  );
   const isMobileBreakpoint = isMobile || isTinyMobile;
 
   return (
@@ -21,7 +27,7 @@ const About = () => {
       <Stack mx='auto' mb={4} px={isMobileBreakpoint ? 4 : 8}>
         <Typography
           sx={{ filter: 'saturate(0.65)' }}
-          color='text.primary'
+          color={text.primary}
           variant='h2'
           className='fat-frank'
           component='h1'
@@ -30,7 +36,7 @@ const About = () => {
         </Typography>
         <Card
           sx={{
-            bgcolor: 'secondary.main',
+            bgcolor: secondary.main,
             minHeight: '65vh',
             p: isMobileBreakpoint ? 4 : 8,
           }}
@@ -38,82 +44,44 @@ const About = () => {
           <Stack sx={{ textAlign: 'left' }}>
             <Typography
               sx={{ filter: 'saturate(0.65)' }}
-              color='common.white'
+              color={common.white}
               variant='h3'
               className='fat-frank'
               component='h2'
             >
               FAQ
             </Typography>
-            <Typography
-              variant='h6'
-              mt={2}
-              color='text.secondary'
-            >
-              <Bullet>
-                1.{' '}
-              </Bullet>
+            <Typography variant='h6' mt={2} color={text.secondary}>
+              <Bullet>1. </Bullet>
               What is the RPS NFT?
             </Typography>
-            <Typography
-              mt={2}
-              color='common.white'
-            >
+            <Typography mt={2} color={common.white}>
               The RPS NFT is a homegrown NFT project made just for fun.
             </Typography>
-            <Typography
-              variant='h6'
-              mt={2}
-              color='text.secondary'
-            >
-              <Bullet>
-                2.{' '}
-              </Bullet>
+            <Typography variant='h6' mt={2} color={text.secondary}>
+              <Bullet>2. </Bullet>
               How do I buy one?
             </Typography>
-            <Typography
-              mt={2}
-              color='common.white'
-            >
+            <Typography mt={2} color={common.white}>
               You need an Ethereum wallet to buy some rETH. I recommend{' '}
-              <Link href='https://metamask.io/'>Metamask</Link> (On mobile, I
-              recommend Metamask's mobile app internal browser). Set your wallet
-              to support the Rinkeby chain and get some rETH from a{' '}
-              <Link href='https://rinkebyfaucet.com/'>Faucet</Link>. Then you
-              use this website as long as there is a remaining supply and the
-              sale is not closed.
+              <Link href='https://metamask.io/'>Metamask</Link> (On mobile, I recommend Metamask's
+              mobile app internal browser). Set your wallet to support the Goerli chain and get some
+              Goerli ETH from a <Link href='https://goerlifaucet.com/'>Faucet</Link>. Then you use
+              this website as long as there is a remaining supply and the sale is not closed.
             </Typography>
-            <Typography
-              variant='h6'
-              mt={2}
-              color='text.secondary'
-            >
-              <Bullet>
-                3.{' '}
-              </Bullet>
-              How much ETH do I need to buy one?
+            <Typography variant='h6' mt={2} color={text.secondary}>
+              <Bullet>3. </Bullet>
+              How much Goerli ETH do I need to buy one?
             </Typography>
-            <Typography
-              mt={2}
-              color='common.white'
-            >
-              The whitelist will be 0.001 rEth, (plus gas), and the public sale
-              will be 0.002 rEth, (plus gas).
+            <Typography mt={2} color={common.white}>
+              The whitelist will be 0.001 Goerli ETH, (plus gas), and the public sale will be 0.002
+              Goerli ETH, (plus gas).
             </Typography>
-            <Typography
-              variant='h6'
-              mt={2}
-              color='text.secondary'
-            >
-              <Bullet>
-                4.{' '}
-              </Bullet>
+            <Typography variant='h6' mt={2} color={text.secondary}>
+              <Bullet>4. </Bullet>
               How is it made?
             </Typography>
-            <Typography
-              mt={2}
-              color='common.white'
-            >
+            <Typography mt={2} color={common.white}>
               This batch is ERC1155 / metadata on-chain / asset on IPFS.
             </Typography>
           </Stack>
@@ -121,6 +89,6 @@ const About = () => {
       </Stack>
     </Main>
   );
-}
+};
 
 export default About;

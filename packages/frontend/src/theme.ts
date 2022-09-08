@@ -38,6 +38,7 @@ export enum ThemeColor {
   error = '#de2114',
   errorLight = '#e8675a',
   errorDark = '#9e1c10',
+  info = '#4e4e4e',
   success = '#4caf50',
   transparent = "#00000000",
 }
@@ -66,6 +67,9 @@ const palette = createPalette({
   },
   background: {
     default: ThemeColor.whitesmoke,
+  },
+  info: {
+    main: ThemeColor.info,
   },
   primary: {
     main: ThemeColor.teal,

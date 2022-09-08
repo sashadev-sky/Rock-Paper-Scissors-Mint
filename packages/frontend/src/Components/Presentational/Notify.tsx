@@ -3,6 +3,11 @@ import { Snackbar, Alert } from '@mui/material';
 
 import { CONGRATULATIONS } from '../../constants/index';
 
+export enum Severity {
+  ERROR = 'error',
+  SUCCESS = 'success',
+}
+
 interface Props {
   /**
    * Callback function to run after the snackbar closes
@@ -19,7 +24,7 @@ interface Props {
   /**
    * Sets the Alert severity
    * */
-  severity?: 'error' | 'success';
+  severity?: Severity;
   /**
    * Message to display on success
    * */
@@ -30,7 +35,7 @@ const Notify = ({
   closeSnackbar,
   error = null,
   loading = false,
-  severity = 'success',
+  severity = Severity.SUCCESS,
   successMessage = CONGRATULATIONS,
 }: Props) => {
   const [open, setOpen] = useState(false);
@@ -53,7 +58,7 @@ const Notify = ({
   return !loading ? (
     <>
       <Snackbar
-        {...(!error && { autoHideDuration: 5000 })}
+        {...(!error && { autoHideDuration: 6000 })}
         anchorOrigin={{ horizontal: 'center', vertical: 'top' }}
         open={open}
         onClose={handleClose}
@@ -83,7 +88,9 @@ const Notify = ({
         </Alert>
       </Snackbar>
     </>
-  ) : (<></>);
+  ) : (
+    <></>
+  );
 };
 
 export default Notify;

@@ -12,9 +12,9 @@ import { needsInjectedWalletFallback } from '../utils/wallet';
 import { ThemeColor } from '../theme';
 
 export const { chains, provider, webSocketProvider } = configureChains(
-  CHAIN_ID === 4 ? [chain.rinkeby, chain.mainnet] : [chain.mainnet],
+  CHAIN_ID === 5 ? [chain.goerli, chain.mainnet] : [chain.mainnet],
   [
-    alchemyProvider({ alchemyId: CHAIN_IDS[CHAIN_ID]?.alchemyId }),
+    alchemyProvider({ alchemyId: CHAIN_IDS[CHAIN_ID]?.alchemy.apiKey }),
     infuraProvider({ infuraId: process.env.REACT_APP_INFURA_ID }),
     jsonRpcProvider({
       rpc: () => {
