@@ -80,7 +80,7 @@ Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://yarnp
 
 > The `rps-hardhat` workspace uses Hardhat as the platform layer to orchestrate all tasks related to smart contract development.
 
-Create a `.env` file in the `hardhat` folder
+Create a `.env` file in the `hardhat` folder and add the values for the variables
 
   ```bash
   cp packages/hardhat/.env.example packages/hardhat/.env
