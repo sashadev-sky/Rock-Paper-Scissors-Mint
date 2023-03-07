@@ -28,7 +28,7 @@ export const CHAIN_IDS: { [key: number]: Chain } = {
     name: 'homestead',
     proxyContractAddress: process.env.REACT_APP_HOMESTEAD_PROXY_CONTRACT_ADDtRESS as string, // a proxy contract never changes its address
     alchemy: {
-      apiKey: process.env.REACT_APP_ALCHEMY_PRODUCTION_KEY as string,
+      apiKey: process.env.REACT_APP_ALCHEMY_MAINNET_KEY as string,
       network: Network.ETH_MAINNET,
     },
     rpcUrl: `https://mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`,
@@ -36,9 +36,9 @@ export const CHAIN_IDS: { [key: number]: Chain } = {
   },
   5: {
     name: 'goerli',
-    proxyContractAddress: process.env.REACT_APP_GOERLI_PROXY_CONTRACT_ADDRESS as string, // a proxy contract never changes its address
+    proxyContractAddress: process.env.REACT_APP_TESTNET_PROXY_CONTRACT_ADDRESS as string, // a proxy contract never changes its address
     alchemy: {
-      apiKey: process.env.REACT_APP_ALCHEMY_STAGING_KEY as string,
+      apiKey: process.env.REACT_APP_ALCHEMY_TESTNET_KEY as string,
       network: Network.ETH_GOERLI,
     },
     rpcUrl: `https://goerli.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`,

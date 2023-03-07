@@ -26,52 +26,47 @@ A user may mint multiple tokens at once. As long as there is a supply remaining,
 
 ## Components
 
-<ol>
-<details><summary><b>🦾 Development Tools</b></summary>
+- <details><summary><b>🦾 Development Tools</b></summary>
 
-- **Yarn** - package manager
-  - This project uses [Yarn Workspaces](https://yarnpkg.com/en/docs/workspaces/)
-  - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%A7%B6-Yarn-Configuration) about its configuration in the project Wiki
-- **Node.js**
-- **TypeScript**
-- **Git** - version control
-- **CRA** - create react app
-
-</details>
-
-<br>
-
-<details><summary><b>⛓️ Ethereum</b></summary>
-
-- **Solidity** (v.0.8.19) - implementing smart contracts
-- **HardHat** - Ethereum development environment
-  - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%91%B7-Hardhat-Configuration) about its configuration in the project Wiki
-- **ethers.js** (v.5) - library for interacting with the Ethereum blockhain
-- **OpenZeppelin** (v.4) - smart contract base implementation
-- **Etherscan** - contract verification
-  - <https://etherscan.io/myapikey>
-
-Public network node providers
-
-- **Alchemy**
-- **Infura**
-
-Decentralized storage
-
-- **NFT.Storage**
-- **IPFS (InterPlanetary File System)**
+  - **Yarn** - package manager
+    - This project uses [Yarn Workspaces](https://yarnpkg.com/en/docs/workspaces/)
+    - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%A7%B6-Yarn-Configuration) about its configuration in the project Wiki
+  - **Node.js**
+  - **TypeScript**
+  - **Git** - version control
+  - **CRA** - create react app
 
 </details>
 
-<br>
+- <details><summary><b>⛓️ Ethereum</b></summary>
 
-<details><summary><b>Frontend</b></summary>
+  - **Solidity** (v.0.8.19) - implementing smart contracts
+  - **HardHat** - Ethereum development environment
+    - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%91%B7-Hardhat-Configuration) about its configuration in the project Wiki
+  - **ethers.js** (v.5) - library for interacting with the Ethereum blockhain
+  - **OpenZeppelin** (v.4) - smart contract base implementation
+  - **Etherscan** - contract verification
+    - <https://etherscan.io/myapikey>
 
-- **React** - JavaScript framework
-  - **RainbowKit** - Ethereum wallet integration
-  - **Wagmi** - Ethereum hooks
-  - **Material UI** - UI framework
-  - **React Router** - Client side routing
+  Public network node providers
+
+  - **Alchemy**
+  - **Infura**
+
+  Decentralized storage
+
+  - **NFT.Storage**
+  - **IPFS (InterPlanetary File System)**
+
+</details>
+
+- <details><summary><b>Frontend</b></summary>
+
+  - **React** - JavaScript framework
+    - **RainbowKit** - Ethereum wallet integration
+    - **Wagmi** - Ethereum hooks
+    - **Material UI** - UI framework
+    - **React Router** - Client side routing
 
 </details>
 
@@ -85,16 +80,10 @@ Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://yarnp
 
 > The `rps-hardhat` workspace uses Hardhat as the platform layer to orchestrate all tasks related to smart contract development.
 
-Create a `.env` file in the `hardhat` folder and add the following variables:
+Create a `.env` file in the `hardhat` folder
 
   ```bash
-  # Required for deploying contracts to specific networks
-  ALCHEMY_STAGING_KEY=
-  ALCHEMY_PRODUCTION_KEY=
-  MNEMONIC=
-  # Required for verifying code after deployment
-  ETHERSCAN_STAGING_KEY=
-  ETHERSCAN_PRODUCTION_KEY=
+  cp packages/hardhat/.env.example packages/hardhat/.env
   ```
 
 ### Writing Smart Contracts
@@ -209,7 +198,7 @@ See [How to Create and Deploy an ERC1155 NFT](./docs/how_to_create_an_ERC1155_nf
 
 3\. Run the deploy task:
 
-  ```bash
+  ```shell
   # yarn deploy --network <network_name>
   yarn deploy:goerli
   ```
@@ -242,28 +231,23 @@ You can also interact with it from the proxy contract at `https://goerli.ethersc
 
 1. Install development dependencies to customize `react-scripts`
 
-    ```bash
+    ```shell
     yarn workspace rps-hardhat add -D env-cmd customize-cra react-app-rewired
     ```
 
-2. Create a `.env` file in the `frontend` folder and add the following variables:
+2. Create a `.env` file in the `frontend` folder and add the values for the variables:
 
-    ```.env
-    REACT_APP_ALCHEMY_STAGING_KEY=
-    REACT_APP_ALCHEMY_PRODUCTION_KEY=
-    REACT_APP_INFURA_ID=
-    REACT_APP_GOERLI_PROXY_CONTRACT_ADDRESS=
-    REACT_APP_HOMESTEAD_PROXY_CONTRACT_ADDRESS=
-    GENERATE_SOURCEMAP=false
+    ```shell
+    cp packages/frontend/.env.example packages/frontend/.env
     ```
 
-    - After deploying a new contract, you will need to update the `REACT_APP_GOERLI_PROXY_CONTRACT_ADDRESS` or `REACT_APP_HOMESTEAD_PROXY_CONTRACT_ADDRESS` variables.
+    - After deploying a new contract, you will need to update the `REACT_APP_TESTNET_PROXY_CONTRACT_ADDRESS` or `REACT_APP_MAINNET_PROXY_CONTRACT_ADDRESS` variable.
 
 3. In `src/constants/index.ts` update the imported contract at the top to your contract's path, the variables under "SEO and Contract Related Info" to match your Application, and the `CHAIN_ID` variable under "Network Related Info" to match the default chain to use (1 (homestead) or 5 (goerli)).
 
 4. Start up the development server with hot reloading
 
-    ```bash
+    ```shell
     yarn start
     ```
 
@@ -273,42 +257,64 @@ You can also interact with it from the proxy contract at `https://goerli.ethersc
 
 To see a list of all tasks available:
 
-```bash
+```shell
 yarn hardhat
 ```
 
 ##### Compile contracts and generate Typechain typings
 
-```bash
+```shell
 yarn compile
 ```
 
 ##### Deploy to Ethereum
 
-```bash
+```shell
+yarn deploy
 yarn deploy:goerli
+yarn deploy:mainnet
+```
+
+##### Print a list of accounts
+
+```shell
+yarn accounts -- <network>  # default network is 'hardhat'
+```
+
+##### Print an account balance
+
+```shell
+yarn balance -- <account_address>
+yarn balance:goerli -- <account_address>
+yarn balance:mainnet -- <account_address>
+```
+
+##### Print the current block number
+
+```shell
+yarn blockNumber -- <network>  # default network is 'hardhat'
 ```
 
 ##### Run the Solidity linter
 
-```bash
+```shell
 yarn lint:hardhat
 ```
 
 ##### Run contract tests
 
-```bash
+```shell
 yarn test:hardhat
 ```
 
 ##### Run the development server with hot reloading
 
-```bash
+```shell
 yarn start
 ```
 
 ##### Create a production build of the site and deploy
 
-```bash
+```shell
 yarn ship
 ```

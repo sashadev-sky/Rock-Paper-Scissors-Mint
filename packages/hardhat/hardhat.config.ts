@@ -32,11 +32,11 @@ const config: HardhatUserConfig = {
       url: 'http://localhost:8545',
     },
     goerli: {
-      url: `https://${Network.ETH_GOERLI}.g.alchemy.com/v2/${process.env.ALCHEMY_STAGING_KEY}`,
+      url: `https://${Network.ETH_GOERLI}.g.alchemy.com/v2/${process.env.ALCHEMY_TESTNET_KEY}`,
       accounts: { mnemonic: process.env.MNEMONIC },
     },
     mainnet: {
-      url: `https://${Network.ETH_MAINNET}.g.alchemy.com/v2/${process.env.ALCHEMY_PRODUCTION_KEY}`,
+      url: `https://${Network.ETH_MAINNET}.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_KEY}`,
       accounts: {
         mnemonic: process.env.MNEMONIC,
       },
@@ -48,8 +48,8 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      goerli: process.env.ETHERSCAN_STAGING_KEY || '',
-      mainnet: process.env.ETHERSCAN_PRODUCTION_KEY || '',
+      goerli: process.env.ETHERSCAN_TESTNET_KEY || '',
+      mainnet: process.env.ETHERSCAN_MAINNET_KEY || '',
     },
   },
 };
@@ -77,20 +77,9 @@ task('balance', "Prints an account's balance")
     console.log(prettyPrintBalance(balance));
   });
 
-task('blockNumber', 'Prints the block number', async (_, { ethers }) => {
+task('blockNumber', 'Prints the current block number', async (_, { ethers }) => {
   const blockNumber = await ethers.provider.getBlockNumber();
   console.log(blockNumber);
-});
-
-task('transferOwnership', 'Transfers ownership to Gnosis Safe', async (_, { upgrades }) => {
-  const gnosisSafe = process.env.GNOSIS_SAFE_ADDR;
-  if (!gnosisSafe) {
-    throw new Error('GNOSIS_SAFE_ADDR is not set');
-  }
-  console.log(`Transferring ownership of ProxyAdmin to safe ${gnosisSafe}`);
-  // The owner of the ProxyAdmin can upgrade our contracts
-  await upgrades.admin.transferProxyAdminOwnership(gnosisSafe);
-  console.log('Transferred ownership of ProxyAdmin to:', gnosisSafe);
 });
 
 task('upgradeContract', 'Upgrades a contract')

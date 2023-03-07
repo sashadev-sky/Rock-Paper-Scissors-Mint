@@ -19,7 +19,7 @@ const NftGallery = ({ chainId = CHAIN_ID, minted }: Props) => {
   const getNftsForCollection = useCallback(async () => {
     try {
       const res: NftContractNftsResponse = await alchemy.nft.getNftsForContract(
-        process.env.REACT_APP_GOERLI_PROXY_CONTRACT_ADDRESS as string
+        process.env.REACT_APP_TESTNET_PROXY_CONTRACT_ADDRESS as string
       );
 
       setNfts(res.nfts);
