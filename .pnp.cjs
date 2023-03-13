@@ -1431,7 +1431,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@types/node",\
-        "npm:17.0.42"\
+        "npm:18.15.0"\
       ],\
       [\
         "@types/node-fetch",\
@@ -4051,7 +4051,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "jest-config",\
-        "virtual:d9bbc1c9cf112502692ccdd903d44621723644100c8276250e935f3f0b2dde1b9a85904c7482496f8398b6897ca0b48a0f959dabeeff693f3902a51b5081ce89#npm:28.1.3"\
+        "virtual:ec7deea196990902081ac820f3dd53fbd33a6f4a4955930510606470bd4b702c32df64b07f114c47750550449010a566b2c9c3a274c293d429735613fdabb454#npm:28.1.3"\
       ],\
       [\
         "jest-diff",\
@@ -14904,6 +14904,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-17.0.42-6d96681ad5-a200cd87e4.zip/node_modules/@types/node/",\
           "packageDependencies": [\
             ["@types/node", "npm:17.0.42"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.15.0", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.15.0-f646cf0d9f-d81372276d.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:18.15.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -30835,7 +30842,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@react-spring/web", "virtual:70f210cf5689b4a9d8dd11256e5cc49e4fee5134f5de1a17cdccf7675e691e2df7e1b4f9f8bc1d1040c5eccba4cb0e51bca4d9dff40bab09dc0a48b0b585858e#npm:9.4.5"],\
             ["@types/babel__core", "npm:7.1.19"],\
             ["@types/eslint", "npm:8.4.3"],\
-            ["@types/node", "npm:17.0.42"],\
+            ["@types/node", "npm:18.15.0"],\
             ["@types/react", "npm:18.0.12"],\
             ["@types/react-dom", "npm:18.0.5"],\
             ["@types/react-helmet", "npm:6.1.5"],\
@@ -30885,7 +30892,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typechain/hardhat", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:6.1.0"],\
             ["@types/chai", "npm:4.3.1"],\
             ["@types/mocha", "npm:9.1.1"],\
-            ["@types/node", "npm:17.0.42"],\
+            ["@types/node", "npm:18.15.0"],\
             ["alchemy-sdk", "npm:2.5.0"],\
             ["chai", "npm:4.3.6"],\
             ["chai-ethers", "npm:0.0.1"],\
@@ -32747,7 +32754,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.10"],\
             ["@tsconfig/node14", "npm:1.0.2"],\
             ["@tsconfig/node16", "npm:1.0.3"],\
-            ["@types/node", "npm:17.0.42"],\
+            ["@types/node", "npm:18.15.0"],\
             ["@types/swc__core", null],\
             ["@types/swc__wasm", null],\
             ["@types/typescript", null],\
