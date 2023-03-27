@@ -5741,7 +5741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^17.0.42":
+"@types/node@npm:*":
   version: 17.0.42
   resolution: "@types/node@npm:17.0.42"
   checksum: a200cd87e4f12d4d5682a893ad6e1140720c6c074a2cd075f254b3b8306d6174f5a3630e5d2347efb5e9b80d420404b5fafc8fe3c7d4c81998cd914c50b19f75
@@ -5752,6 +5752,13 @@ __metadata:
   version: 11.11.6
   resolution: "@types/node@npm:11.11.6"
   checksum: 075f1c011cf568e49701419acbcb55c24906b3bb5a34d9412a3b88f228a7a78401a5ad4d3e1cd6855c99aaea5ef96e37fc86ca097e50f06da92cf822befc1fff
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.15.10":
+  version: 18.15.10
+  resolution: "@types/node@npm:18.15.10"
+  checksum: 9aeae0b683eda82892def5315812bdee3f1a28c4898b7e70f8e2514564538b16c4dccbe8339c1266f8fc1d707a48f152689264a854f5ebc2eba5011e793612d9
   languageName: node
   linkType: hard
 
@@ -18571,7 +18578,7 @@ __metadata:
     "@react-spring/web": ^9.4.5
     "@types/babel__core": ^7
     "@types/eslint": ^8
-    "@types/node": ^17.0.42
+    "@types/node": ^18.15.10
     "@types/react": ^18.0.12
     "@types/react-dom": ^18.0.1
     "@types/react-helmet": ^6.1.5
@@ -18619,7 +18626,7 @@ __metadata:
     "@typechain/hardhat": ^6.0.0
     "@types/chai": ^4.3.0
     "@types/mocha": ^9.1.0
-    "@types/node": ^17.0.42
+    "@types/node": ^18.15.10
     alchemy-sdk: ^2.5.0
     chai: ^4.3.6
     chai-ethers: ^0.0.1
