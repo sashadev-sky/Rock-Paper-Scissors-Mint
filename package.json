@@ -5,9 +5,9 @@
     "type": "git",
     "url": "https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint.git"
   },
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.5.1",
   "author": "Sasha Boginsky",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "private": true,
   "scripts": {
     "accounts": "yarn workspace rps-hardhat accounts -- ${1:-hardhat}",
