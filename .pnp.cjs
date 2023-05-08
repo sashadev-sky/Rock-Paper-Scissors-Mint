@@ -2786,7 +2786,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "deep-object-diff",\
-        "npm:1.1.7"\
+        "npm:1.1.9"\
       ],\
       [\
         "deepmerge",\
@@ -15511,7 +15511,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["css-what", "npm:5.1.0"],\
             ["cssesc", "npm:3.0.0"],\
             ["csstype", "npm:3.1.0"],\
-            ["deep-object-diff", "npm:1.1.7"],\
+            ["deep-object-diff", "npm:1.1.9"],\
             ["deepmerge", "npm:4.2.2"],\
             ["escape-string-regexp", "npm:4.0.0"],\
             ["outdent", "npm:0.8.0"]\
@@ -19809,10 +19809,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["deep-object-diff", [\
-        ["npm:1.1.7", {\
-          "packageLocation": "./.yarn/cache/deep-object-diff-npm-1.1.7-f83d006c8d-543fb1ae87.zip/node_modules/deep-object-diff/",\
+        ["npm:1.1.9", {\
+          "packageLocation": "./.yarn/cache/deep-object-diff-npm-1.1.9-b3c323e343-ecd42455e4.zip/node_modules/deep-object-diff/",\
           "packageDependencies": [\
-            ["deep-object-diff", "npm:1.1.7"]\
+            ["deep-object-diff", "npm:1.1.9"]\
           ],\
           "linkType": "HARD"\
         }]\
