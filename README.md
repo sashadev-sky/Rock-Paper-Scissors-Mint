@@ -46,6 +46,7 @@ A user may mint multiple tokens at once. As long as there is a supply remaining,
     - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%91%B7-Hardhat-Configuration) about its configuration in the project Wiki
   - **ethers.js** (v.5) - library for interacting with the Ethereum blockhain
   - **OpenZeppelin** (v.4) - smart contract base implementation
+    - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/OpenZeppelin-Configuration) about the OpenZeppelin configuration
   - **Etherscan** - contract verification
     - <https://etherscan.io/myapikey>
 
