@@ -1470,7 +1470,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@types/react-helmet",\
-        "npm:6.1.5"\
+        "npm:6.1.6"\
       ],\
       [\
         "@types/react-is",\
@@ -15029,10 +15029,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/react-helmet", [\
-        ["npm:6.1.5", {\
-          "packageLocation": "./.yarn/cache/@types-react-helmet-npm-6.1.5-f6dfe85617-d059cc084d.zip/node_modules/@types/react-helmet/",\
+        ["npm:6.1.6", {\
+          "packageLocation": "./.yarn/cache/@types-react-helmet-npm-6.1.6-5b3822b661-81560c56bf.zip/node_modules/@types/react-helmet/",\
           "packageDependencies": [\
-            ["@types/react-helmet", "npm:6.1.5"],\
+            ["@types/react-helmet", "npm:6.1.6"],\
             ["@types/react", "npm:18.0.12"]\
           ],\
           "linkType": "HARD"\
@@ -30868,7 +30868,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.1.0"],\
             ["@types/react", "npm:18.0.12"],\
             ["@types/react-dom", "npm:18.0.5"],\
-            ["@types/react-helmet", "npm:6.1.5"],\
+            ["@types/react-helmet", "npm:6.1.6"],\
             ["alchemy-sdk", "npm:2.5.0"],\
             ["assert", "npm:2.0.0"],\
             ["babel-plugin-import", "npm:1.13.5"],\
