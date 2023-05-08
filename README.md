@@ -41,6 +41,7 @@ A user may mint multiple tokens at once. As long as there is a supply remaining,
 - <details><summary><b>⛓️ Ethereum</b></summary>
 
   - **Solidity** (v.0.8.19) - implementing smart contracts
+    - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%93%83-Contract-Configuration) about the contract configuration
   - **HardHat** - Ethereum development environment
     - [Read more](https://github.com/sashadev-sky/Rock-Paper-Scissors-Mint/wiki/%F0%9F%91%B7-Hardhat-Configuration) about its configuration in the project Wiki
   - **ethers.js** (v.5) - library for interacting with the Ethereum blockhain
@@ -82,128 +83,27 @@ Prerequisites: [Node](https://nodejs.org/en/download/) plus [Yarn](https://yarnp
 
 Create a `.env` file in the `hardhat` folder and add the values for the variables
 
-  ```bash
+  ```shell
   cp packages/hardhat/.env.example packages/hardhat/.env
   ```
 
-### Writing Smart Contracts
+### Smart Contract Development
 
-See [How to Create and Deploy an ERC1155 NFT](./docs/how_to_create_an_ERC1155_nft.md).
-
-#### Adding a contract
-
-1\. Add your `.sol` contract to the `contracts` directory
-
-2\. Compile contracts and generate Typechain typings::
-
-  ```bash
-  yarn compile
-  ```
+After updating a contract, compile it and generate Typechain typings
 
 - Hardhat always runs the `compile` task when running scripts with its command line interface, so this is not required unless you plan running them directly using `node`.
 
-#### Deploying a contract
+```shell
+yarn compile
+```
 
-1\. Add your `.ts` deployment script in the `deploy` directory.
-
-- <details>
-    <summary>
-      <code>RPS</code> contract's deployment script, <code>001_deploy_rps.ts</code>, annotated for reference
-    </summary>
-
-  ```typescript
-  import { HardhatRuntimeEnvironment } from 'hardhat/types';
-  import { DeployFunction } from 'hardhat-deploy/types';
-
-  import { LOCAL_NETWORKS } from '../constants'
-
-  const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-    /**
-     * If this script is run directly using `node`, you may want to call
-     * `compile` manually to make sure everything is compiled
-    **/
-
-    // await hre.run('compile');
-
-    const {
-      deployments,
-      ethers,
-      getNamedAccounts,
-      upgrades
-    } = hre;
-    const { getNetworkName } = deployments;
-    const { deployProxy, erc1967 } = upgrades;
-
-    const targetNetwork = await getNetworkName();
-    const { deployer } = await getNamedAccounts();
-
-    // ############## DEPLOYING ###############
-
-    const RPS = await ethers.getContractFactory('RPS');
-
-    console.log(`Deployer ${deployer} is deploying RPS to the ${targetNetwork} network...`);
-
-    // `hre.upgrades.deployProxy` will deploy the new implementation contract
-    // (unless there is one already from a previous deployment)
-    const proxy = await deployProxy(RPS, [], {
-      initializer: 'initialize',
-      kind: 'transparent',
-    });
-
-    await proxy.deployed();
-
-    console.log('RPS deployed to: ', proxy.address);
-
-    const implementationAddr = await erc1967.getImplementationAddress(
-      proxy.address
-    );
-
-    // ############## VERIFICATION ###############
-
-    // run verification when the contract is not deployed on a local network (localhost, hardhat)
-    if (!LOCAL_NETWORKS.includes(targetNetwork)) {
-      console.log('Waiting 60s to verify');
-
-      await new Promise<void>((resolve) => {
-        setTimeout(async () => {
-          await run('verify:verify', {
-            address: implementationAddr, // implementation address
-          }).catch((e) => console.error(`ERROR: ${e}`));
-          resolve();
-        }, 60 * 1000);
-      });
-    }
-  };
-
-  export default func;
-
-  func.tags = ['RPS'];
-  ```
-
-  </details>
-
-- **Etherscan Verification**
-
-  - The `@nomiclabs/hardhat-etherscan` package enables us to verify by running the `verify` task, passing the address of the contract and the constructor arguments that were used to deploy it (if any).
-  - Verification throws an error when the contract has already been verified
-  - Notice that our verification is pointing to the **implementation**, not **proxy** address.
-
-2\. The account needs to be setup in `hardhat.config.ts`. Modify it so it looks like this:
-
-  ```typescript
-  namedAccounts: {
-    deployer: 0,  // by default take the first account as deployer
-  },
-  ```
-
-3\. Run the deploy task:
-
-  ```shell
-  # yarn deploy --network <network_name>
-  yarn deploy:goerli
-  ```
+Then deploy it to Ethereum on the Goerli or Mainnet network
 
 - The deployed address is the address of our deployed **proxy** instance
+
+```shell
+yarn deploy --network <network_name>
+```
 
 #### Interacting with a contract
 
@@ -255,7 +155,7 @@ You can also interact with it from the proxy contract at `https://goerli.ethersc
 
 #### Tasks
 
-To see a list of all tasks available:
+##### See a list of all tasks available
 
 ```shell
 yarn hardhat
@@ -267,7 +167,7 @@ yarn hardhat
 yarn compile
 ```
 
-##### Deploy to Ethereum
+##### Deploy a contract to Ethereum
 
 ```shell
 yarn deploy
