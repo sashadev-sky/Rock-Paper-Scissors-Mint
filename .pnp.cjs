@@ -4338,7 +4338,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "loader-utils",\
-        "npm:2.0.2"\
+        "npm:2.0.4"\
       ],\
       [\
         "locate-path",\
@@ -13648,7 +13648,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["error-stack-parser", "npm:2.1.4"],\
             ["find-up", "npm:5.0.0"],\
             ["html-entities", "npm:2.3.3"],\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.4"],\
             ["react-refresh", "npm:0.11.0"],\
             ["schema-utils", "npm:3.1.1"],\
             ["sockjs-client", null],\
@@ -14326,7 +14326,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@svgr/core", "npm:5.5.0"],\
             ["@svgr/plugin-jsx", "npm:5.5.0"],\
             ["@svgr/plugin-svgo", "npm:5.5.0"],\
-            ["loader-utils", "npm:2.0.2"]\
+            ["loader-utils", "npm:2.0.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16363,7 +16363,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/adjust-sourcemap-loader-npm-4.0.0-c8b560af8c-d524ae2358.zip/node_modules/adjust-sourcemap-loader/",\
           "packageDependencies": [\
             ["adjust-sourcemap-loader", "npm:4.0.0"],\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.4"],\
             ["regex-parser", "npm:2.2.11"]\
           ],\
           "linkType": "HARD"\
@@ -17137,7 +17137,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__core", null],\
             ["@types/webpack", null],\
             ["find-cache-dir", "npm:3.3.2"],\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.4"],\
             ["make-dir", "npm:3.1.0"],\
             ["schema-utils", "npm:2.7.1"],\
             ["webpack", "virtual:70f210cf5689b4a9d8dd11256e5cc49e4fee5134f5de1a17cdccf7675e691e2df7e1b4f9f8bc1d1040c5eccba4cb0e51bca4d9dff40bab09dc0a48b0b585858e#npm:5.81.0"]\
@@ -21973,7 +21973,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["file-loader", "virtual:e0d08426e682bf18de42fbf74c7fe8f1a23fcbab18a47cea4f74d4b1d6b6d4a13b7b959b019c61f1b9c9dffcf1ee8b7f0abf2086d0d6a16c5f2c3435e39b7df2#npm:6.2.0"],\
             ["@types/webpack", null],\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.4"],\
             ["schema-utils", "npm:3.1.1"],\
             ["webpack", "virtual:70f210cf5689b4a9d8dd11256e5cc49e4fee5134f5de1a17cdccf7675e691e2df7e1b4f9f8bc1d1040c5eccba4cb0e51bca4d9dff40bab09dc0a48b0b585858e#npm:5.81.0"]\
           ],\
@@ -25881,10 +25881,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["loader-utils", [\
-        ["npm:2.0.2", {\
-          "packageLocation": "./.yarn/cache/loader-utils-npm-2.0.2-c693411911-9078d1ed47.zip/node_modules/loader-utils/",\
+        ["npm:2.0.4", {\
+          "packageLocation": "./.yarn/cache/loader-utils-npm-2.0.4-ba3800585b-a5281f5fff.zip/node_modules/loader-utils/",\
           "packageDependencies": [\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.4"],\
             ["big.js", "npm:5.2.2"],\
             ["emojis-list", "npm:3.0.0"],\
             ["json5", "npm:2.2.1"]\
@@ -30653,7 +30653,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/rework-visit", null],\
             ["adjust-sourcemap-loader", "npm:4.0.0"],\
             ["convert-source-map", "npm:1.8.0"],\
-            ["loader-utils", "npm:2.0.2"],\
+            ["loader-utils", "npm:2.0.4"],\
             ["postcss", "npm:7.0.39"],\
             ["rework", null],\
             ["rework-visit", null],\
