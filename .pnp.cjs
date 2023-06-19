@@ -1050,7 +1050,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@openzeppelin/contracts-upgradeable",\
-        "npm:4.6.0"\
+        "npm:4.9.2"\
       ],\
       [\
         "@openzeppelin/hardhat-upgrades",\
@@ -13548,10 +13548,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@openzeppelin/contracts-upgradeable", [\
-        ["npm:4.6.0", {\
-          "packageLocation": "./.yarn/cache/@openzeppelin-contracts-upgradeable-npm-4.6.0-778fc4941a-f9802c9ccc.zip/node_modules/@openzeppelin/contracts-upgradeable/",\
+        ["npm:4.9.2", {\
+          "packageLocation": "./.yarn/cache/@openzeppelin-contracts-upgradeable-npm-4.9.2-1afd0c3d40-88df083e88.zip/node_modules/@openzeppelin/contracts-upgradeable/",\
           "packageDependencies": [\
-            ["@openzeppelin/contracts-upgradeable", "npm:4.6.0"]\
+            ["@openzeppelin/contracts-upgradeable", "npm:4.9.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -30909,7 +30909,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nomiclabs/hardhat-ethers", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:2.0.6"],\
             ["@nomiclabs/hardhat-etherscan", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:3.1.0"],\
             ["@nomiclabs/hardhat-waffle", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:2.0.3"],\
-            ["@openzeppelin/contracts-upgradeable", "npm:4.6.0"],\
+            ["@openzeppelin/contracts-upgradeable", "npm:4.9.2"],\
             ["@openzeppelin/hardhat-upgrades", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:1.18.1"],\
             ["@typechain/ethers-v5", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:10.1.0"],\
             ["@typechain/hardhat", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:6.1.0"],\
