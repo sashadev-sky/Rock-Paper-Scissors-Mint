@@ -1741,6 +1741,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.22.6":
+  version: 7.22.10
+  resolution: "@babel/runtime@npm:7.22.10"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: 524d41517e68953dbc73a4f3616b8475e5813f64e28ba89ff5fca2c044d535c2ea1a3f310df1e5bb06162e1f0b401b5c4af73fe6e2519ca2450d9d8c44cf268d
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.16.7, @babel/template@npm:^7.3.3":
   version: 7.16.7
   resolution: "@babel/template@npm:7.16.7"
@@ -4435,11 +4444,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^5.6.2":
-  version: 5.8.3
-  resolution: "@mui/icons-material@npm:5.8.3"
+"@mui/icons-material@npm:^5.14.3":
+  version: 5.14.3
+  resolution: "@mui/icons-material@npm:5.14.3"
   dependencies:
-    "@babel/runtime": ^7.17.2
+    "@babel/runtime": ^7.22.6
   peerDependencies:
     "@mui/material": ^5.0.0
     "@types/react": ^17.0.0 || ^18.0.0
@@ -4447,7 +4456,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 6c09ab20194904ed755cb595382df8b74ffbf914feaad89d603fd624148944be5e728286eb7b05534c9fc104bf0f765f4d50548e370ee5b3b0f64bfaaec0969a
+  checksum: 25ff0261dcbcdde9967779f844d12c85c3ffc79227e50d8c03eade1081c2be855e88d2dbe2a587aa57b5c5c2b742af14f70b1767f7ccfd539d89876a6fc580fb
   languageName: node
   linkType: hard
 
@@ -18166,6 +18175,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "regenerator-runtime@npm:0.14.0"
+  checksum: 1c977ad82a82a4412e4f639d65d22be376d3ebdd30da2c003eeafdaaacd03fc00c2320f18120007ee700900979284fc78a9f00da7fb593f6e6eeebc673fba9a3
+  languageName: node
+  linkType: hard
+
 "regenerator-transform@npm:^0.15.0":
   version: 0.15.0
   resolution: "regenerator-transform@npm:0.15.0"
@@ -18601,7 +18617,7 @@ __metadata:
     "@babel/preset-typescript": ^7.18.6
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1
-    "@mui/icons-material": ^5.6.2
+    "@mui/icons-material": ^5.14.3
     "@mui/lab": ^5.0.0-alpha.78
     "@mui/material": ^5.6.2
     "@mui/utils": ^5.8.0
