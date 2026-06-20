@@ -3706,7 +3706,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "http-proxy-middleware",\
-        "virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.6"\
+        "virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.10"\
       ],\
       [\
         "http-signature",\
@@ -23333,17 +23333,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["http-proxy-middleware", [\
-        ["npm:2.0.6", {\
-          "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-2ee85bc878.zip/node_modules/http-proxy-middleware/",\
+        ["npm:2.0.10", {\
+          "packageLocation": "./.yarn/cache/http-proxy-middleware-npm-2.0.10-2b15026740-94dd3289f8.zip/node_modules/http-proxy-middleware/",\
           "packageDependencies": [\
-            ["http-proxy-middleware", "npm:2.0.6"]\
+            ["http-proxy-middleware", "npm:2.0.10"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.6", {\
-          "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-96deb229d6/0/cache/http-proxy-middleware-npm-2.0.6-3bb17658ee-2ee85bc878.zip/node_modules/http-proxy-middleware/",\
+        ["virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.10", {\
+          "packageLocation": "./.yarn/__virtual__/http-proxy-middleware-virtual-b243f7ff0d/0/cache/http-proxy-middleware-npm-2.0.10-2b15026740-94dd3289f8.zip/node_modules/http-proxy-middleware/",\
           "packageDependencies": [\
-            ["http-proxy-middleware", "virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.6"],\
+            ["http-proxy-middleware", "virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.10"],\
             ["@types/express", "npm:4.17.13"],\
             ["@types/http-proxy", "npm:1.17.9"],\
             ["http-proxy", "npm:1.18.1"],\
@@ -33818,7 +33818,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.18.1"],\
             ["graceful-fs", "npm:4.2.10"],\
             ["html-entities", "npm:2.3.3"],\
-            ["http-proxy-middleware", "virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.6"],\
+            ["http-proxy-middleware", "virtual:ea2816e049bdbae3c9e56b278e225ab4c469c2b2336ffbe61d6525199813bac471a06d5b154893332a7e5aac51638b97cf27839cabd1218e31c332c94404c6d0#npm:2.0.10"],\
             ["ipaddr.js", "npm:2.0.1"],\
             ["open", "npm:8.4.0"],\
             ["p-retry", "npm:4.6.2"],\
