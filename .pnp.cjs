@@ -829,6 +829,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:5.6.1"\
       ],\
       [\
+        "@fastify/busboy",\
+        "npm:2.1.1"\
+      ],\
+      [\
         "@ganache/ethereum-address",\
         "npm:0.1.4"\
       ],\
@@ -6166,7 +6170,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "undici",\
-        "npm:5.4.0"\
+        "npm:5.29.0"\
       ],\
       [\
         "unicode-canonical-property-names-ecmascript",\
@@ -12188,6 +12192,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@fastify/busboy", [\
+        ["npm:2.1.1", {\
+          "packageLocation": "./.yarn/cache/@fastify-busboy-npm-2.1.1-455d8b6bf5-42c32ef75e.zip/node_modules/@fastify/busboy/",\
+          "packageDependencies": [\
+            ["@fastify/busboy", "npm:2.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@ganache/ethereum-address", [\
         ["npm:0.1.4", {\
           "packageLocation": "./.yarn/cache/@ganache-ethereum-address-npm-0.1.4-99bd5922f1-0e07102c67.zip/node_modules/@ganache/ethereum-address/",\
@@ -13479,7 +13492,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],\
             ["semver", "npm:6.3.0"],\
             ["table", "npm:6.8.0"],\
-            ["undici", "npm:5.4.0"]\
+            ["undici", "npm:5.29.0"]\
           ],\
           "packagePeers": [\
             "@types/hardhat",\
@@ -22899,7 +22912,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-node", "virtual:6267fd25410ff82efdabbfd1563eb4f569e9d24840ebffdd8bcb4100cf999dfdac88cb6753310612a49ccadca0e3fca128f826896abddec6c0de2ba3527cf4df#npm:10.9.1"],\
             ["tsort", "npm:0.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=65a307"],\
-            ["undici", "npm:5.4.0"],\
+            ["undici", "npm:5.29.0"],\
             ["uuid", "npm:8.3.2"],\
             ["ws", "virtual:f91bf4c0c4aadcdfd1654c7f1672aa158081b3d1f8f0a85d6474e5410f732c9c06f9cbc6f1645ed67983b8491d534f1568af9ff8d50552cb6ff14ce1242252b5#npm:7.5.8"]\
           ],\
@@ -33161,10 +33174,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["undici", [\
-        ["npm:5.4.0", {\
-          "packageLocation": "./.yarn/cache/undici-npm-5.4.0-8831a4e82e-2852397ee1.zip/node_modules/undici/",\
+        ["npm:5.29.0", {\
+          "packageLocation": "./.yarn/cache/undici-npm-5.29.0-caeb96c8ee-a25b5462c1.zip/node_modules/undici/",\
           "packageDependencies": [\
-            ["undici", "npm:5.4.0"]\
+            ["undici", "npm:5.29.0"],\
+            ["@fastify/busboy", "npm:2.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
