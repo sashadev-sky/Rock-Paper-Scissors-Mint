@@ -6358,7 +6358,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "websocket-driver",\
-        "npm:0.7.4"\
+        "npm:0.7.5"\
       ],\
       [\
         "websocket-extensions",\
@@ -21906,7 +21906,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/faye-websocket-npm-0.11.4-1f0de76de9-d49a62caf0.zip/node_modules/faye-websocket/",\
           "packageDependencies": [\
             ["faye-websocket", "npm:0.11.4"],\
-            ["websocket-driver", "npm:0.7.4"]\
+            ["websocket-driver", "npm:0.7.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -31506,7 +31506,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sockjs", "npm:0.3.24"],\
             ["faye-websocket", "npm:0.11.4"],\
             ["uuid", "npm:8.3.2"],\
-            ["websocket-driver", "npm:0.7.4"]\
+            ["websocket-driver", "npm:0.7.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -33909,10 +33909,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["websocket-driver", [\
-        ["npm:0.7.4", {\
-          "packageLocation": "./.yarn/cache/websocket-driver-npm-0.7.4-a72739da70-fffe5a33fe.zip/node_modules/websocket-driver/",\
+        ["npm:0.7.5", {\
+          "packageLocation": "./.yarn/cache/websocket-driver-npm-0.7.5-6b2cf62650-2ad622f462.zip/node_modules/websocket-driver/",\
           "packageDependencies": [\
-            ["websocket-driver", "npm:0.7.4"],\
+            ["websocket-driver", "npm:0.7.5"],\
             ["http-parser-js", "npm:0.5.6"],\
             ["safe-buffer", "npm:5.2.1"],\
             ["websocket-extensions", "npm:0.1.4"]\
