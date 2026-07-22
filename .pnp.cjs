@@ -5714,7 +5714,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "shell-quote",\
-        "npm:1.7.3"\
+        "npm:1.10.0"\
       ],\
       [\
         "side-channel",\
@@ -29892,7 +29892,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prompts", "npm:2.4.2"],\
             ["react-error-overlay", "npm:6.0.11"],\
             ["recursive-readdir", "npm:2.2.2"],\
-            ["shell-quote", "npm:1.7.3"],\
+            ["shell-quote", "npm:1.10.0"],\
             ["strip-ansi", "npm:6.0.1"],\
             ["text-table", "npm:0.2.0"],\
             ["typescript", "patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=65a307"],\
@@ -31414,10 +31414,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["shell-quote", [\
-        ["npm:1.7.3", {\
-          "packageLocation": "./.yarn/cache/shell-quote-npm-1.7.3-76a78a6d77-aca58e73a3.zip/node_modules/shell-quote/",\
+        ["npm:1.10.0", {\
+          "packageLocation": "./.yarn/cache/shell-quote-npm-1.10.0-8aabc0056e-d4bc0757ae.zip/node_modules/shell-quote/",\
           "packageDependencies": [\
-            ["shell-quote", "npm:1.7.3"]\
+            ["shell-quote", "npm:1.10.0"]\
           ],\
           "linkType": "HARD"\
         }]\
