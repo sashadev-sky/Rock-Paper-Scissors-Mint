@@ -3770,7 +3770,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "immutable",\
-        "npm:4.1.0"\
+        "npm:4.3.9"\
       ],\
       [\
         "import-fresh",\
@@ -22880,7 +22880,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fp-ts", "npm:1.19.3"],\
             ["fs-extra", "npm:7.0.1"],\
             ["glob", "npm:7.2.0"],\
-            ["immutable", "npm:4.1.0"],\
+            ["immutable", "npm:4.3.9"],\
             ["io-ts", "npm:1.10.4"],\
             ["lodash", "npm:4.17.21"],\
             ["merkle-patricia-tree", "npm:4.2.4"],\
@@ -23539,10 +23539,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["immutable", [\
-        ["npm:4.1.0", {\
-          "packageLocation": "./.yarn/cache/immutable-npm-4.1.0-f6635927b8-b9bc1f14fb.zip/node_modules/immutable/",\
+        ["npm:4.3.9", {\
+          "packageLocation": "./.yarn/cache/immutable-npm-4.3.9-04378617c7-08cdd3cc99.zip/node_modules/immutable/",\
           "packageDependencies": [\
-            ["immutable", "npm:4.1.0"]\
+            ["immutable", "npm:4.3.9"]\
           ],\
           "linkType": "HARD"\
         }]\
